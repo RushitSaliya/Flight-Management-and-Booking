@@ -1,5 +1,19 @@
+.heading-sign-up{
+    color: white;
+}
+
 .label-input{
-    margin-bottom: 5px !important;
+    color: white;
+    margin-bottom: 3px !important;
+}
+
+.radio-btn-input{
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
 }
 
 .submit-pad{
