@@ -1,3 +1,11 @@
+.label-input{
+    margin-bottom: 5px !important;
+}
+
+.submit-pad{
+    margin-top: 5px;
+}
+
 .inverted-img {
     filter: brightness(0) invert(1);
 }
@@ -45,3 +53,4 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
+
