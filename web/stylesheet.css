@@ -1,0 +1,47 @@
+.inverted-img {
+    filter: brightness(0) invert(1);
+}
+
+.border {
+    padding: 0px 10px;
+    border: 1px solid!important;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.navbar.bg-light {
+    width: 100%;
+    background-color: #668cff!important;
+}
+
+/* Manual color for navbar-brand, activated nav-link and nav-link's focused state */
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand {
+    
+}
+
+/* For changing nav-link's default color from #000 to #bfbfbf */
+.navbar-light .navbar-nav .nav-link {
+    color: #d9d9d9;
+}
+
+/* For changing default hovering effect color from #000 to #fff */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Hovering efect for navbar-brand */
+.navbar-light .navbar-brand:hover{
+    color: #fff;
+    font-weight: 500;
+}
+
+.index-page-image {
+    background: url("static/images/flight.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
