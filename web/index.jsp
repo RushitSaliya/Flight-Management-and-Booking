@@ -44,7 +44,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link logout-link" href="#">
+                                    <a class="nav-link logout-link" href="signup.jsp">
                                         Sign Up
                                     </a>
                                 </li>
