@@ -30,6 +30,33 @@
     margin-bottom: 15px;
 }
 
+/* For main result body */
+.result-main{
+    background: transparent;
+}
+
+/* For every result displayed in list */
+.result{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* For margin at bottom of first line of result body */
+.result-line{
+    margin-bottom: 20px;
+}
+
+/* To display flight name, price bloder */
+.big-font{
+    font-size: 150%;
+}
+
+/* To display departure time, journey hours and seats 
+   to display larger but not larger than flight-name */
+.mid-font{
+    font-size: 120%;
+}
+
 .inverted-img {
     filter: brightness(0) invert(1);
 }

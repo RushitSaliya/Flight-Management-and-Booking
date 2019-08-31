@@ -58,21 +58,37 @@
             <div class="row index-page-image card text-left">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-2 mb-2"></div>
-                        <div class="col-md-8 mb-5">
+                        <div class="col-md-3 mb-3"></div>
+                        <div class="col-md-6 mb-3">
                             <h1 class="text-center heading-sign-up">Search results</h1>
-                            <div class="card">
-                                <div class="card-body result-body">
-                                    This is some text within a card body.
+                            <div class="card result-main">
+                                <div class="card card-body result">
+                                    <div class="result-line big-font">
+                                        <span class="float-left">Air India 4040</span>
+                                        <span class="float-right">$200</span>
+                                    </div>
+                                    <div class="mid-font">
+                                        <span class="float-left">2:00 PM</span>
+                                        <div class="text-center">8 hours
+                                            <span class="float-right">26 seats</span>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="card">
-                                <div class="card-body result-body">
-                                    This is some text within a card body.
+                                <div class="card card-body result">
+                                    <div class="result-line big-font">
+                                        <span class="float-left">Jet Airways</span>
+                                        <span class="float-right">$300</span>
+                                    </div>
+                                    <div class="mid-font">
+                                        <span class="float-left">7:00 AM</span>
+                                        <div class="text-center">7 hours
+                                            <span class="float-right">16 seats</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-2 mb-2"></div>
+                        <div class="col-md-3 mb-3"></div>
                     </div>
                 </div>
             </div>
