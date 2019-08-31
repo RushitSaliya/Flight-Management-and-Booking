@@ -1,12 +1,15 @@
+/* For heading of sign up page */ 
 .heading-sign-up{
     color: white;
 }
 
+/* For every label in sign up page */
 .label-input{
     color: white;
     margin-bottom: 3px !important;
 }
 
+/* For radio button used in sign up page */
 .radio-btn-input{
     top: 0;
     left: 0;
@@ -16,8 +19,15 @@
     border-radius: 50%;
 }
 
+/* Padding for submit button */
 .submit-pad{
     margin-top: 5px;
+}
+
+/* For every result in search result page */
+.result-body{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .inverted-img {
