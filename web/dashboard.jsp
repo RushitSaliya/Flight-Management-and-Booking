@@ -12,6 +12,7 @@
         <script type="text/javascript" src="JS/jquery.min.js"></script>
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+        <script type="text/javascript" src="JS/local.js"></script>
          <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -32,7 +33,6 @@
                           <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm ticket</a>
                         </li>
                     </ul>
-
                     <!-- Tab panes -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="chooseSeat">
