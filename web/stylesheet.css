@@ -1,9 +1,9 @@
-/* For heading of sign up page */ 
-.heading-sign-up{
+/* For heading of sign up page and admin panel page*/ 
+.heading{
     color: white;
 }
 
-/* For every label in sign up page */
+/* For every label in sign up page and admin panel page*/
 .label-input{
     color: white;
     margin-bottom: 3px !important;
