@@ -7,7 +7,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Swift air airways</title>
+        <title>Swift Airways</title>
     </head>
     <body>
         <div class="container-fluid">

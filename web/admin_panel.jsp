@@ -7,7 +7,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sign up page</title>
+        <title>Swift Airways</title>
     </head>
     <body>
         <div class="container-fluid">
@@ -58,71 +58,44 @@
             <div class="row index-page-image card text-left">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 mb-3"></div>
-                        <div class="col-md-4 mb-3">
-                            <h1 class="text-center heading">Sign up</h1>
+                        <div class="col-md-3 mb-3"></div>
+                        <div class="col-md-6 mb-3">
+                            <h1 class="text-center heading">Admin Panel</h1>
                             <form>
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
-                                        <label class="label-input">Name</label>
-                                        <input type="text" class="form-control" placeholder="Full name" required>
+                                        <label class="label-input">Enter Flight name</label>
+                                        <input class="form-control" type="text" name="flight-name" placeholder="Enter full flight name"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Birth-date</label>
-                                        <input type="date" class="form-control" required>
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Enter airport name</label>
+                                        <input class="form-control" type="text" name="flight-name" placeholder="Enter airport name from where flight will depart"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Gender</label>
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <input class="radio-btn-input" type="radio" name="gender" value="male">
-                                                <label class="label-input">Male</label>
-                                                <input class="radio-btn-input" type="radio" name="gender" value="female">
-                                                <label class="label-input">Female</label>
-                                                <input class="radio-btn-input" type="radio" name="gender" value="other">
-                                                <label class="label-input">Other</label>
-                                            </div>
-                                        </div>
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Enter destination</label>
+                                        <input class="form-control" type="text" name="flight-name" placeholder="Enter destination airport"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Mobile no</label>
-                                        <input type="text" class="form-control" placeholder="1234567890" required>
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Departure time</label>
+                                        <input class="form-control" type="text" name="dept-time" placeholder="Enter departure time"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Email</label>
-                                        <input type="mail" class="form-control" placeholder="abc@xyz.com" required>
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Journey hours</label>
+                                        <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Location</label>
-                                        <input type="text" class="form-control" placeholder="City with state" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Photo</label>
-                                        <input type="file" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Password</label>
-                                        <input type="password" class="form-control" placeholder="Minimum 8 characters required" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                        <label class="label-input">Confirm password</label>
-                                        <input type="password" class="form-control" placeholder="Enter password again" required>
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Ticket price</label>
+                                        <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $"/>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -132,7 +105,7 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-4 mb-3"></div>
+                        <div class="col-md-3 mb-3"></div>
                     </div>
                 </div>
             </div>
