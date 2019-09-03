@@ -14,11 +14,16 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="JS/local.js"></script>
          <div class="container-fluid">
+             <div class="row">
+                <div class="col-md-12">
+                    <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%;">Welcome Rushit!</div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-md-12">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#chooseSeat" role="tab" data-toggle="tab" aria-selected="true">Choose your seat</a>
+                          <a class="nav-link active" href="#seatMap" role="tab" data-toggle="tab" aria-selected="true">Seat map</a>
                         </li>
                         <li class="nav-item">
                           <a class="nav-link" href="#boarding" role="tab" data-toggle="tab">Boarding</a>
@@ -35,9 +40,12 @@
                     </ul>
                     <!-- Tab panes -->
                     <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane active" id="chooseSeat">
-                            <div class="plane-body pb-md-3" style="margin-left: 35%; margin-right: 30%; margin-top: 10%; padding-top: 6%;">
-                                <c:forEach var="j" begin="1" end="10">
+                        <div role="tabpanel" class="tab-pane active" id="seatMap" style="text-align: center;">
+                            <div class="display-4 mt-md-3" style="color: #668cff;">
+                                Choose your Seat
+                            </div>
+                            <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 35%; margin-right: 30%; margin-top: 2%; padding-top: 6%;">
+                                <c:forEach var="j" begin="1" end="20">
                                     <div class="seat" style="margin-top: 2%; margin-left: 7%;"></div>
                                     <c:forEach var="k" begin="1" end="2">
                                         <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
