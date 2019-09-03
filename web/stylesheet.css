@@ -105,3 +105,22 @@
     background-size: 100% 100%;
 }
 
+.plane-body {
+    height: 300%;
+    width: 30%;
+    border: 1px #000 solid;
+    border-radius: 7%;
+    float: left;
+}
+
+.seat {
+    height: 15px;
+    width: 15px;
+    border: 1px #000 solid;
+    border-radius: 20%;
+    float: left;
+}
+
+.seat:hover {
+    background-color: #668cff;
+}
