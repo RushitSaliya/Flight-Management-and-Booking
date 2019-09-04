@@ -57,6 +57,10 @@
     font-size: 120%;
 }
 
+.label-black{
+    color: black;
+}
+
 .inverted-img {
     filter: brightness(0) invert(1);
 }
@@ -106,8 +110,8 @@
 }
 
 .plane-body {
-    height: 300%;
-    width: 30%;
+    height: 550px;
+    width: 375px;
     border: 1px #000 solid;
     border-radius: 7%;
     float: left;

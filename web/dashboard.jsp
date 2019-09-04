@@ -26,12 +26,6 @@
                           <a class="nav-link active" href="#seatMap" role="tab" data-toggle="tab" aria-selected="true">Seat map</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#boarding" role="tab" data-toggle="tab">Boarding</a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#dropping" role="tab" data-toggle="tab">Dropping</a>
-                        </li>
-                        <li class="nav-item">
                           <a class="nav-link" href="#passengerInformation" role="tab" data-toggle="tab">Passenger information</a>
                         </li>
                         <li class="nav-item">
@@ -61,10 +55,22 @@
                                 </c:forEach>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="boarding">boarding</div>
-                        <div role="tabpanel" class="tab-pane fade" id="dropping">dropping</div>
                         <div role="tabpanel" class="tab-pane fade" id="passengerInformation">passengerInformation</div>
-                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">confirmTicket</div>
+                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
+                            <div class="row card text-left">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3"></div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="row label-black">Name : Abc Xyz</label>
+                                            <label class="row label-black">Age : 12 years</label>
+                                            <label class="row label-black">Age : 12 years</label>
+                                        </div>
+                                        <div class="col-md-3 mb-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
