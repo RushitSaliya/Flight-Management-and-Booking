@@ -3,11 +3,15 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="CSS/bootstrap.min.css">
+<<<<<<< HEAD
+        <link type="text/css" rel="stylesheet" href="stylesheet.css">
+=======
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="stylesheet.css">
+>>>>>>> c8866a7d2b10a758f85376eacb034d88534092b5
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Sign up page</title>
+        <title>Swift Airways</title>
     </head>
     <body>
         <div class="container-fluid">

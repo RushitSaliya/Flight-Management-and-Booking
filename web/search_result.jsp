@@ -3,8 +3,11 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="CSS/bootstrap.min.css">
+<<<<<<< HEAD
+=======
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+>>>>>>> c8866a7d2b10a758f85376eacb034d88534092b5
         <link type="text/css" rel="stylesheet" href="stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Swift Airways</title>
@@ -60,7 +63,7 @@
                     <div class="row">
                         <div class="col-md-3 mb-3"></div>
                         <div class="col-md-6 mb-3">
-                            <h1 class="text-center heading-sign-up">Search results</h1>
+                            <h1 class="text-center heading">Search results</h1>
                             <div class="card result-main">
                                 <div class="card card-body result">
                                     <div class="result-line big-font">
