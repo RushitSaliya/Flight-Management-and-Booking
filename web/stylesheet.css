@@ -57,8 +57,15 @@
     font-size: 120%;
 }
 
-.label-black{
+.label-info{
     color: black;
+}
+
+.heading-info{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #668cff!important;
+    font-size: 200%;
 }
 
 .inverted-img {
