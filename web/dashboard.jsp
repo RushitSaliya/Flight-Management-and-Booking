@@ -56,42 +56,101 @@
                                 </c:forEach>
                             </div>
                         </div>
-                        <div role="tabpanel" class="tab-pane fade" id="passengerInformation">passengerInformation</div>
-                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
-                            <div class="row card text-left">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-md-3 mb-3"></div>
-                                        <div class="col-md-6 mb-3">
-                                            <label class="row label-black">Name : Abc Xyz</label>
-                                            <label class="row label-black">Age : 12 years</label>
-                                            <label class="row label-black">Age : 12 years</label>
+                        <!-- Passenger information tab -->
+                        <div role="tabpanel" class="tab-pane fade" id="passengerInformation">
+                            <label class="heading-info display-3">Enter your details</label>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="" method="">
+                                                <div class="form-row">
+                                                    <div class="col-xs-12 col-md-12 mb-3">
+                                                        <label class="label-info">Name</label>
+                                                        <input type="text" class="form-control" placeholder="Full name" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="label-info">Age</label>
+                                                        <input type="text" class="form-control" required placeholder="Enter your age">
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="label-info">Gender</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <input class="radio-btn-input" type="radio" name="gender" value="male">
+                                                                <label class="label-info">Male</label>
+                                                                <input class="radio-btn-input" type="radio" name="gender" value="female">
+                                                                <label class="label-info">Female</label>
+                                                                <input class="radio-btn-input" type="radio" name="gender" value="other">
+                                                                <label class="label-info">Other</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="label-info">Mobile no</label>
+                                                        <input type="text" class="form-control" placeholder="1234567890" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="label-info">Email</label>
+                                                        <input type="mail" class="form-control" placeholder="abc@xyz.com" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-12 mb-3">
+                                                        <label class="label-info">Location</label>
+                                                        <input type="text" class="form-control" placeholder="City with state" required>
+                                                    </div>
+                                                </div>
+                                                <div class="form-row">
+                                                    <div class="col-md-4 mb-3 submit-pad">
+                                                        <button id="confirmTicket_button" class="btn btn-primary" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="col-md-3 mb-3"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Passenger information tab -->
-                        <div role="tabpanel" class="tab-pane fade" id="passengerInformation">
-                            <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%; color: #668cff;">Passenger information</div>
-                            <div class="card mt-md-2" style="width: 50%;">
-                                <div class="card-body">
-                                    <form action="" method="">
-                                        <div class="form-row">
-                                          <div class="col">
-                                            <input type="text" class="form-control" placeholder="First name">
-                                          </div>
-                                          <div class="col">
-                                            <input type="text" class="form-control" placeholder="Last name">
-                                          </div>
+                        <!-- Confirm ticket tab -->
+                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
+                        <label class="heading-info display-3">Please confirm your ticket</label>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="" method="">
+                                                <label class="label-info row">Name : Abc Xyz</label>
+                                                <label class="label-info row">Age : 18 years</label>
+                                                <label class="label-info row">Gender : Male</label>
+                                                <label class="label-info row">Mobile no.: 40213013264</label>
+                                                <label class="label-info row">Email : abc@xyz.com</label>
+                                                <label class="label-info row">Location : Unknown</label>
+                                                <label class="label-info row">Flight name : Air India 5623S Boeing aircraft</label>
+                                                <label class="label-info row">Seat no : AB12</label>
+                                                <label class="label-info row">Boarding time : 11:00:00 Aug 15, 2020 IST</label>
+                                                <label class="label-info row">Boarding point : ABC airport, XYZW</label>
+                                                <label class="label-info row">Journey : ABC to XYZ</label>
+                                                <label class="label-info row">Journey time : 8 hours</label>
+                                                <div class="form-row">
+                                                    <div class="col-md-4 mb-3 submit-pad">
+                                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- Confirm ticket tab -->
-                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">confirmTicket</div>
                     </div>
                 </div>
             </div>
