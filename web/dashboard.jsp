@@ -56,6 +56,22 @@
                                 </c:forEach>
                             </div>
                         </div>
+                        <div role="tabpanel" class="tab-pane fade" id="passengerInformation">passengerInformation</div>
+                        <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
+                            <div class="row card text-left">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3 mb-3"></div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="row label-black">Name : Abc Xyz</label>
+                                            <label class="row label-black">Age : 12 years</label>
+                                            <label class="row label-black">Age : 12 years</label>
+                                        </div>
+                                        <div class="col-md-3 mb-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Passenger information tab -->
                         <div role="tabpanel" class="tab-pane fade" id="passengerInformation">
                             <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%; color: #668cff;">Passenger information</div>

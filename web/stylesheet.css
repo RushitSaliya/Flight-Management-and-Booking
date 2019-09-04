@@ -57,6 +57,10 @@
     font-size: 120%;
 }
 
+.label-black{
+    color: black;
+}
+
 .inverted-img {
     filter: brightness(0) invert(1);
 }
