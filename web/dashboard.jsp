@@ -53,22 +53,28 @@
                                 <c:forEach var="k" begin="1" end="2">
                                     <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
                                 </c:forEach>
-                                <% char vertical_var = 'A'; %>
-                                <c:forEach var="j" begin="1" end="20">
-                                    <div class="char"><% out.print(vertical_var++); %></div>
-                                    <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
+                                <c:forTokens items="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T" delims="," var="vertical_var">
+                                    <c:set var="num" value="1" />
+                                    <div class="char"><c:out value="${vertical_var}" /></div>
+                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
+                                    <c:set var="num" value="${num+1}" />
                                     <c:forEach var="k" begin="1" end="2">
-                                        <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <c:set var="num" value="${num+1}" />
                                     </c:forEach>
-                                    <div class="seat" style="margin-top: 2%; margin-left: 13%;"></div>
+                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 13%;"></div>
+                                    <c:set var="num" value="${num+1}" />
                                     <c:forEach var="k" begin="1" end="4">
-                                        <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <c:set var="num" value="${num+1}" />
                                     </c:forEach>
-                                    <div class="seat" style="margin-top: 2%; margin-left: 13%;"></div>
+                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 13%;"></div>
+                                    <c:set var="num" value="${num+1}" />
                                     <c:forEach var="k" begin="1" end="2">
-                                        <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
+                                        <c:set var="num" value="${num+1}" />
                                     </c:forEach>
-                                </c:forEach>
+                                </c:forTokens>
                             </div>
                         </div>
                         <!-- Passenger information tab -->
