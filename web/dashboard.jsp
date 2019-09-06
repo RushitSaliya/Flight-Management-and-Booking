@@ -39,9 +39,25 @@
                             <div class="heading-info display-3 mt-md-3" style="color: #668cff;">
                                 Choose your Seat
                             </div>
+                            <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 36%; margin-right: 30%; margin-top: 2%; padding-top: 4%;">
+                                <% int number = 1; %>
+                                <div class="number-top" style="margin-top: 2%; margin-left: 8%;"><% out.print(number++); %></div>
+                                <c:forEach var="k" begin="1" end="2">
+                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                </c:forEach>
+                                <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
+                                <c:forEach var="k" begin="1" end="4">
+                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                </c:forEach>
+                                <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
+                                <c:forEach var="k" begin="1" end="2">
+                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                </c:forEach>
+                                <% char vertical_var = 'A'; %>
                             <div class="plane-body pb-md-1" style="margin-left: 36%; margin-right: 30%; margin-top: 3%; margin-bottom: 1%; padding-top: 6%;">
                                 <c:forEach var="j" begin="1" end="20">
-                                    <div class="seat" style="margin-top: 2%; margin-left: 7%;"></div>
+                                    <div class="char"><% out.print(vertical_var++); %></div>
+                                    <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
                                     <c:forEach var="k" begin="1" end="2">
                                         <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
                                     </c:forEach>
