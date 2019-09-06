@@ -54,7 +54,6 @@
                                     <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
                                 </c:forEach>
                                 <% char vertical_var = 'A'; %>
-                            <div class="plane-body pb-md-1" style="margin-left: 36%; margin-right: 30%; margin-top: 3%; margin-bottom: 1%; padding-top: 6%;">
                                 <c:forEach var="j" begin="1" end="20">
                                     <div class="char"><% out.print(vertical_var++); %></div>
                                     <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
