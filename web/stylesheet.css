@@ -68,6 +68,21 @@
     font-size: 200%;
 }
 
+.char{
+    height: 20px;
+    margin-left: 1%;
+    width: 20px;
+    float: left;
+    padding-top: 2px;
+}
+
+.number-top{
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-bottom: 5px;
+}
+
 .inverted-img {
     filter: brightness(0) invert(1);
 }

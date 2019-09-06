@@ -4,8 +4,6 @@
     <head>
         <link type="text/css" rel="stylesheet" href="CSS/bootstrap.min.css">
         <link type="text/css" rel="stylesheet" href="stylesheet.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Swift Airways</title>
@@ -43,12 +41,7 @@
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
                                     <a class="nav-link" href="#">
-                                        Sign In
-                                    </a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link logout-link" href="#">
-                                        Sign Up
+                                        Log In
                                     </a>
                                 </li>
                             </ul>
