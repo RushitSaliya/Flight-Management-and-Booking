@@ -32,7 +32,7 @@
                           <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm ticket</a>
                         </li>
                     </ul>
-                    <!-- Tab panes -->
+                    <!-- TAB PANES -->
                     <!-- Seat map tab -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="seatMap" style="text-align: center;">

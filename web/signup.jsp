@@ -55,17 +55,17 @@
                         <div class="col-md-4 mb-3"></div>
                         <div class="col-md-4 mb-3">
                             <h1 class="text-center heading">Sign up</h1>
-                            <form>
+                            <form method="POST" action="register">
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
                                         <label class="label-input">Name</label>
-                                        <input type="text" class="form-control" placeholder="Full name" required>
+                                        <input name="name" type="text" class="form-control" placeholder="Full name" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Birth-date</label>
-                                        <input type="date" class="form-control" required>
+                                        <input name="date" type="date" class="form-control" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
@@ -86,31 +86,31 @@
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Mobile no</label>
-                                        <input type="text" class="form-control" placeholder="1234567890" required>
+                                        <input name="mobile" type="text" class="form-control" placeholder="1234567890" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Email</label>
-                                        <input type="mail" class="form-control" placeholder="abc@xyz.com" required>
+                                        <input name="email" type="mail" class="form-control" placeholder="abc@xyz.com" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Location</label>
-                                        <input type="text" class="form-control" placeholder="City with state" required>
+                                        <input name="location" type="text" class="form-control" placeholder="City with state" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Password</label>
-                                        <input type="password" class="form-control" placeholder="Minimum 8 characters required" required>
+                                        <input name="password" type="password" class="form-control" placeholder="Minimum 8 characters required" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Confirm password</label>
-                                        <input type="password" class="form-control" placeholder="Enter password again" required>
+                                        <input name="c_password" type="password" class="form-control" placeholder="Enter password again" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
