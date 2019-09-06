@@ -62,7 +62,7 @@
                         <div class="col-md-4 mb-3"></div>
                         <div class="col-md-4 mb-3">
                             <h1 class="text-center heading">Sign up</h1>
-                            <form>
+                            <form method="POST" action="register">
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
                                         <label class="label-input">Name</label>
