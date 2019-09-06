@@ -103,12 +103,6 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
-                                        <label class="label-input">Photo</label>
-                                        <input type="file" class="form-control" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
                                         <label class="label-input">Password</label>
                                         <input type="password" class="form-control" placeholder="Minimum 8 characters required" required>
                                     </div>

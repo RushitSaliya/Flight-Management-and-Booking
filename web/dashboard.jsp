@@ -36,7 +36,7 @@
                     <!-- Seat map tab -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="seatMap" style="text-align: center;">
-                            <div class="display-4 mt-md-3" style="color: #668cff;">
+                            <div class="heading-info display-3 mt-md-3" style="color: #668cff;">
                                 Choose your Seat
                             </div>
                             <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 36%; margin-right: 30%; margin-top: 2%; padding-top: 4%;">
@@ -54,6 +54,7 @@
                                     <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
                                 </c:forEach>
                                 <% char vertical_var = 'A'; %>
+                            <div class="plane-body pb-md-1" style="margin-left: 36%; margin-right: 30%; margin-top: 3%; margin-bottom: 1%; padding-top: 6%;">
                                 <c:forEach var="j" begin="1" end="20">
                                     <div class="char"><% out.print(vertical_var++); %></div>
                                     <div class="seat" style="margin-top: 2%; margin-left: 2%;"></div>
@@ -96,11 +97,11 @@
                                                         <label class="label-info">Gender</label>
                                                         <div class="input-group">
                                                             <div class="input-group-prepend">
-                                                                <input class="radio-btn-input" type="radio" name="gender" value="male">
+                                                                <input class="radio-btn-input mr-md-1" type="radio" name="gender" value="male">
                                                                 <label class="label-info">Male</label>
-                                                                <input class="radio-btn-input" type="radio" name="gender" value="female">
+                                                                <input class="radio-btn-input ml-md-3 mr-md-1" type="radio" name="gender" value="female">
                                                                 <label class="label-info">Female</label>
-                                                                <input class="radio-btn-input" type="radio" name="gender" value="other">
+                                                                <input class="radio-btn-input ml-md-3 mr-md-1" type="radio" name="gender" value="other">
                                                                 <label class="label-info">Other</label>
                                                             </div>
                                                         </div>
@@ -116,12 +117,6 @@
                                                     <div class="col-md-12 mb-3">
                                                         <label class="label-info">Email</label>
                                                         <input type="mail" class="form-control" placeholder="abc@xyz.com" required>
-                                                    </div>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col-md-12 mb-3">
-                                                        <label class="label-info">Location</label>
-                                                        <input type="text" class="form-control" placeholder="City with state" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -143,18 +138,17 @@
                                     <div class="card">
                                         <div class="card-body">
                                             <form action="" method="">
-                                                <label class="label-info row">Name : Abc Xyz</label>
-                                                <label class="label-info row">Age : 18 years</label>
-                                                <label class="label-info row">Gender : Male</label>
-                                                <label class="label-info row">Mobile no.: 40213013264</label>
-                                                <label class="label-info row">Email : abc@xyz.com</label>
-                                                <label class="label-info row">Location : Unknown</label>
-                                                <label class="label-info row">Flight name : Air India 5623S Boeing aircraft</label>
-                                                <label class="label-info row">Seat no : AB12</label>
-                                                <label class="label-info row">Boarding time : 11:00:00 Aug 15, 2020 IST</label>
-                                                <label class="label-info row">Boarding point : ABC airport, XYZW</label>
-                                                <label class="label-info row">Journey : ABC to XYZ</label>
-                                                <label class="label-info row">Journey time : 8 hours</label>
+                                                <label class="label-info row"><strong>Name</strong> : Abc Xyz</label>
+                                                <label class="label-info row"><strong>Age</strong> : 18 years</label>
+                                                <label class="label-info row"><strong>Gender</strong> : Male</label>
+                                                <label class="label-info row"><strong>Mobile no.</strong> : 40213013264</label>
+                                                <label class="label-info row"><strong>Email</strong> : abc@xyz.com</label>
+                                                <label class="label-info row"><strong>Flight name</strong> : Air India 5623S Boeing aircraft</label>
+                                                <label class="label-info row"><strong>Seat no</strong> : AB12</label>
+                                                <label class="label-info row"><strong>Boarding time</strong> : 11:00:00 Aug 15, 2020 IST</label>
+                                                <label class="label-info row"><strong>Boarding point</strong> : ABC airport, XYZW</label>
+                                                <label class="label-info row"><strong>Journey</strong> : ABC to XYZ</label>
+                                                <label class="label-info row"><strong>Journey duration</strong> : 8 hours</label>
                                                 <div class="form-row">
                                                     <div class="col-md-4 mb-3 submit-pad">
                                                         <button class="btn btn-primary" type="submit">Submit</button>
