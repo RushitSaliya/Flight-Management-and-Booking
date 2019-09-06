@@ -8,10 +8,6 @@
         <title>Swift Airways</title>
     </head>
     <body>
-        <script type="text/javascript" src="JS/jquery.min.js"></script>
-        <script type="text/javascript" src="JS/popper.min.js"></script>
-        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
-        <script type="text/javascript" src="local.js"></script>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -42,10 +38,6 @@
                         </div>
                         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                             <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">
-                                        Sign In
-                                    </a>
                                 </li>
                                 <li class="nav-item active">
                                     <a class="nav-link logout-link" href="#">
@@ -60,37 +52,30 @@
             <div class="row index-page-image card text-left">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-3 mb-3"></div>
-                        <div class="col-md-6 mb-3">
-                            <h1 class="text-center heading">Search results</h1>
-                            <div class="card result-main">
-                                <div class="card card-body result">
-                                    <div class="result-line big-font">
-                                        <span class="float-left">Air India 4040</span>
-                                        <span class="float-right">$200</span>
-                                    </div>
-                                    <div class="mid-font">
-                                        <span class="float-left">2:00 PM</span>
-                                        <div class="text-center">8 hours
-                                            <span class="float-right">26 seats</span>
-                                        </div>
+                        <div class="col-md-4 mb-3"></div>
+                        <div class="col-md-4 mb-3">
+                            <h1 class="text-center heading">Log in</h1>
+                            <form method="post" action="">
+                                <div class="form-row">
+                                    <div class="col-xs-12 col-md-12 mb-3">
+                                        <label class="label-input">Email</label>
+                                        <input type="text" class="form-control" placeholder="Enter your email here" required>
                                     </div>
                                 </div>
-                                <div class="card card-body result">
-                                    <div class="result-line big-font">
-                                        <span class="float-left">Jet Airways</span>
-                                        <span class="float-right">$300</span>
-                                    </div>
-                                    <div class="mid-font">
-                                        <span class="float-left">7:00 AM</span>
-                                        <div class="text-center">7 hours
-                                            <span class="float-right">16 seats</span>
-                                        </div>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                        <label class="label-input">Password</label>
+                                        <input type="password" class="form-control" placeholder="Enter your password here" required>
                                     </div>
                                 </div>
-                            </div>
+                                <div class="form-row">
+                                    <div class="col-md-4 mb-3 submit-pad">
+                                        <button class="btn btn-primary" type="submit">Login</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <div class="col-md-3 mb-3"></div>
+                        <div class="col-md-4 mb-3"></div>
                     </div>
                 </div>
             </div>
