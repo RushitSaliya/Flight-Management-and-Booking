@@ -3,13 +3,15 @@
 <html>
     <head>
         <link type="text/css" rel="stylesheet" href="CSS/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
         <link type="text/css" rel="stylesheet" href="stylesheet.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Swift Airways</title>
     </head>
     <body>
+        <script type="text/javascript" src="JS/jquery.min.js"></script>
+        <script type="text/javascript" src="JS/popper.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+        <script type="text/javascript" src="local.js"></script>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
