@@ -8,6 +8,10 @@
         <title>Swift Airways</title>
     </head>
     <body>
+        <script type="text/javascript" src="JS/jquery.min.js"></script>
+        <script type="text/javascript" src="JS/popper.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+        <script type="text/javascript" src="local.js"></script>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -40,7 +44,7 @@
                             <ul class="navbar-nav ml-auto">
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link logout-link" href="#">
+                                    <a class="nav-link logout-link" href="signup.jsp">
                                         Sign Up
                                     </a>
                                 </li>
@@ -54,18 +58,26 @@
                     <div class="row">
                         <div class="col-md-4 mb-3"></div>
                         <div class="col-md-4 mb-3">
+                            <%  if("fail".equals(request.getParameter("log-in"))){%>
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    Please check username and password!
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                 </div>
+                            <%  }%>
                             <h1 class="text-center heading">Log in</h1>
-                            <form method="post" action="">
+                            <form method="post" action="login_check">
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
                                         <label class="label-input">Email</label>
-                                        <input type="text" class="form-control" placeholder="Enter your email here" required>
+                                        <input name="user_email" type="text" class="form-control" placeholder="Enter your email here" required>
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-12 mb-3">
                                         <label class="label-input">Password</label>
-                                        <input type="password" class="form-control" placeholder="Enter your password here" required>
+                                        <input name="user_password" type="password" class="form-control" placeholder="Enter your password here" required>
                                     </div>
                                 </div>
                                 <div class="form-row">

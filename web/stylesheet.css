@@ -76,11 +76,19 @@
     padding-top: 2px;
 }
 
+/* In dashboard.jsp, for numbers on seat-map */
 .number-top{
     height: 15px;
     width: 15px;
     float: left;
     margin-bottom: 5px;
+}
+
+/* In index.jsp, for drop down menus */
+.drop-down{
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 .inverted-img {

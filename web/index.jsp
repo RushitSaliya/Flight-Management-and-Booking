@@ -63,9 +63,11 @@
                             <form>
                                 <div class="row">
                                     <div class="col-md-5" style="padding-right: 0;">
-                                        <div class="form-group">
-                                            <input type="text" name="from" class="form-control" placeholder="From*">
-                                        </div>
+                                        <select name="from-source" class="form-control drop-down">
+                                            <option class="dropdown-item" value="rajkot">Rajkot</option>
+                                            <option class="dropdown-item" value="surat">Surat</option>
+                                            <option class="dropdown-item" value="ahmedabad">Ahmedabad</option>
+                                        </select>
                                     </div>
                                     <div class="col-md-2" style="text-align: center;">
                                         <div class="form-group">
@@ -75,13 +77,15 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5" style="padding-left: 0;">
-                                        <div class="form-group">
-                                            <input type="text" name="to" class="form-control" placeholder="To*">
-                                        </div>
+                                        <select name="to-destination" class="form-control drop-down">
+                                            <option class="dropdown-item" value="rajkot">Rajkot</option>
+                                            <option class="dropdown-item" value="surat">Surat</option>
+                                            <option class="dropdown-item" value="ahmedabad">Ahmedabad</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                  <input type="date" from="date" class="form-control">
+                                    <input type="date" from="date" class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-outline-primary">Search Flight</button>
                             </form>

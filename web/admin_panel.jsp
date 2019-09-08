@@ -8,6 +8,10 @@
         <title>Swift Airways</title>
     </head>
     <body>
+        <script type="text/javascript" src="JS/jquery.min.js"></script>
+        <script type="text/javascript" src="JS/popper.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+        <script type="text/javascript" src="local.js"></script>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
