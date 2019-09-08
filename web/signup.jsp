@@ -49,12 +49,12 @@
                     </nav>
                 </div>
             </div>
-            <div class="row index-page-image card text-left">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4 mb-3"></div>
-                        <div class="col-md-4 mb-3">
-                            <h1 class="text-center heading">Sign up</h1>
+            <div class="row text-left form-top-margin">
+                <div class="col-md-4 mb-3"></div>
+                <div class="col-md-4 mb-3">
+                    <h1 class="text-center heading">Sign up</h1>
+                    <div class="card">
+                        <div class="card-body">
                             <form method="POST" action="register">
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
@@ -120,9 +120,9 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-4 mb-3"></div>
                     </div>
                 </div>
+                <div class="col-md-4 mb-3"></div>
             </div>
         </div>
     </body>
