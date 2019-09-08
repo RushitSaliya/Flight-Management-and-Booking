@@ -1,4 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@page import="java.sql.*" %>
+<%@page import="Database.DatabaseConnection" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +40,7 @@
                             </ul>
                         </div>
                         <div class="nav-btn">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
@@ -64,30 +68,44 @@
                         <div class="col-md-6 mb-3">
                             <h1 class="text-center heading">Search results</h1>
                             <div class="card result-main">
-                                <div class="card card-body result">
-                                    <div class="result-line big-font">
-                                        <span class="float-left">Air India 4040</span>
-                                        <span class="float-right">$200</span>
-                                    </div>
-                                    <div class="mid-font">
-                                        <span class="float-left">2:00 PM</span>
-                                        <div class="text-center">8 hours
-                                            <span class="float-right">26 seats</span>
+                                <%  // fetching flight details from 'index.jsp'
+                                    Connection con = new DatabaseConnection().getConnection();
+                                    PreparedStatement stmt = con.prepareStatement("SELECT * FROM flight "
+                                                                                    + "WHERE flight_source=? AND flight_destination=? AND flight_date=?");
+                                    stmt.setString(1, request.getParameter("from"));
+                                    stmt.setString(2, request.getParameter("to"));
+                                    stmt.setString(3, (String)(request.getParameter("date")));
+                                    ResultSet rst = stmt.executeQuery();
+                                    rst.last();
+                                    pageContext.setAttribute("rst1", rst);
+                                    rst.first();
+                                    pageContext.setAttribute("rst2", rst);
+                                %>
+                                <c:forEach begin="1" end="${rst1.getRow() + 1}">
+                                    <div class="card card-body result">
+                                        <div class="result-line big-font">
+                                            <span class="float-left">
+                                                <c:out value="${rst2.getString(2)}"/>
+                                            </span>
+                                            <span class="float-right">
+                                                $<c:out value="${rst2.getString(3)}"/>
+                                            </span>
+                                        </div>
+                                        <div class="mid-font">
+                                            <span class="float-left">
+                                                <c:out value="${rst2.getString(7)}"/>
+                                            </span>
+                                            <div class="text-center"><c:out value="${rst2.getString(8)}"/>
+                                                <span class="float-right"><c:out value="${rst2.getString(10)}"/> seats</span>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card card-body result">
-                                    <div class="result-line big-font">
-                                        <span class="float-left">Jet Airways</span>
-                                        <span class="float-right">$300</span>
-                                    </div>
-                                    <div class="mid-font">
-                                        <span class="float-left">7:00 AM</span>
-                                        <div class="text-center">7 hours
-                                            <span class="float-right">16 seats</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                    <%  // making ResultSet point to next record
+                                        rst = (ResultSet)(pageContext.getAttribute("rst2"));
+                                        rst.next();
+                                        pageContext.setAttribute("rst2", rst);
+                                    %>
+                                </c:forEach>
                             </div>
                         </div>
                         <div class="col-md-3 mb-3"></div>

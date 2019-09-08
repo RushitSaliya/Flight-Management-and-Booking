@@ -5,4 +5,5 @@ $(document).ready(function() {
     $('#confirmTicket_button').click(function() {
         $('.nav-tabs a[href="#confirmTicket"]').tab('show');
     });
+    $('.alert').alert();
 });

@@ -8,6 +8,10 @@
         <title>Swift Airways</title>
     </head>
     <body>
+        <script type="text/javascript" src="JS/jquery.min.js"></script>
+        <script type="text/javascript" src="JS/popper.min.js"></script>
+        <script type="text/javascript" src="JS/bootstrap.min.js"></script>
+        <script type="text/javascript" src="local.js"></script>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -15,22 +19,7 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
                         </a>
-                        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Statistics</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Estimation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </div>
+                        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"></div>
                         <div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -53,14 +42,23 @@
                     </nav>
                 </div>
             </div>
-            <div class="row index-page-image pt-5 pb-5">
+            <div class="row index-page-image pt-3 pb-5">
                 <div class="col-md-7 mt-md-3 mb-md-3">
+                    <%  // checking for query parameter in url
+                        if("success".equals(request.getParameter("signup"))) {%>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Account created successfully!</strong> Kindly log back in for booking your flight.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                    <%  }%>
                     <div class="card mt-md-5 mb-md-5" style="background-color: transparent;">
                         <div class="card-body">
                             <div class="display-4 mb-md-3 pb-md-3" style="font-size: 200%; color: #fff;">
                                 <strong>Book your ticket</strong>
                             </div>
-                            <form>
+                            <form method="GET" action="search_result.jsp">
                                 <div class="row">
                                     <div class="col-md-5" style="padding-right: 0;">
                                         <div class="form-group">
@@ -81,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                  <input type="date" from="date" class="form-control">
+                                  <input type="date" name="date" class="form-control">
                                 </div>
                                 <button type="submit" class="btn btn-outline-primary">Search Flight</button>
                             </form>
