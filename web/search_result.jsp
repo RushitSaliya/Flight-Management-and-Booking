@@ -77,6 +77,31 @@
                                         <% out.print("$ " + rst.getString("flight_price")); %>
                                     </span>
                                 </div>
+                                <c:forEach begin="1" end="${rst1.getRow() + 1}">
+                                    <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;">
+                                        <div class="card card-body result">
+                                            <div class="result-line big-font">
+                                                <span class="float-left">
+                                                    <% out.print(rst.getString("flight_name")); %>
+                                                </span>
+                                                <span class="float-right">
+                                                    <% out.print("$ " + rst.getString("flight_price")); %>
+                                                </span>
+                                            </div>
+                                            <div class="mid-font">
+                                                <span class="float-left">
+                                                    <% out.print(rst.getString("flight_time")); %>
+                                                </span>
+                                                <div class="text-center"><% out.print(rst.getString("flight_duration")); %>
+                                                    <span class="float-right"> <% out.print(rst.getString("flight_available_seats")); %> seats</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <%  // making ResultSet point to next record
+                                        rst.next();
+                                    %>
+                                </c:forEach>
                                 <div class="mid-font">
                                     <span class="float-left">
                                         <% out.print(rst.getString("flight_time")); %>
