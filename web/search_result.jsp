@@ -23,22 +23,6 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
                         </a>
-                        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Statistics</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Estimation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -69,6 +53,7 @@
                             <h1 class="text-center heading">Search results</h1>
                             <div class="card result-main">
                                 <%  // fetching flight details from 'index.jsp'
+                                    int size = 0;
                                     Connection con = new DatabaseConnection().getConnection();
                                     PreparedStatement stmt = con.prepareStatement("SELECT * FROM flight "
                                                                                     + "WHERE flight_source=? AND flight_destination=? AND flight_date=?");
@@ -77,33 +62,34 @@
                                     stmt.setString(3, (String)(request.getParameter("date")));
                                     ResultSet rst = stmt.executeQuery();
                                     rst.last();
+                                    size = rst.getRow();
                                     pageContext.setAttribute("rst1", rst);
                                     rst.first();
-                                    pageContext.setAttribute("rst2", rst);
                                 %>
+                                <div class="row"><% out.print(size); %> results found for <% request.getParameter("from"); %> to 
+                                    <% request.getParameter("to"); %>
+                                </div>
                                 <c:forEach begin="1" end="${rst1.getRow() + 1}">
                                     <div class="card card-body result">
                                         <div class="result-line big-font">
                                             <span class="float-left">
-                                                <c:out value="${rst2.getString(2)}"/>
+                                                <% out.print(rst.getString("flight_name")); %>
                                             </span>
                                             <span class="float-right">
-                                                $<c:out value="${rst2.getString(3)}"/>
+                                                <% out.print("$ " + rst.getString("flight_price")); %>
                                             </span>
                                         </div>
                                         <div class="mid-font">
                                             <span class="float-left">
-                                                <c:out value="${rst2.getString(7)}"/>
+                                                <% out.print(rst.getString("flight_time")); %>
                                             </span>
-                                            <div class="text-center"><c:out value="${rst2.getString(8)}"/>
-                                                <span class="float-right"><c:out value="${rst2.getString(10)}"/> seats</span>
+                                            <div class="text-center"><% out.print(rst.getString("flight_duration")); %>
+                                                <span class="float-right"> <% out.print(rst.getString("flight_available_seats")); %> seats</span>
                                             </div>
                                         </div>
                                     </div>
                                     <%  // making ResultSet point to next record
-                                        rst = (ResultSet)(pageContext.getAttribute("rst2"));
                                         rst.next();
-                                        pageContext.setAttribute("rst2", rst);
                                     %>
                                 </c:forEach>
                             </div>
