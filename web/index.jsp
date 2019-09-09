@@ -28,7 +28,7 @@
                         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">
+                                    <a class="nav-link" href="login.jsp">
                                         Sign In
                                     </a>
                                 </li>
@@ -62,7 +62,11 @@
                                 <div class="row">
                                     <div class="col-md-5" style="padding-right: 0;">
                                         <div class="form-group">
-                                            <input type="text" name="from" class="form-control" placeholder="From*">
+                                            <select class="form-control" name="from">
+                                                <option value="Rajkot">Rajkot</option>
+                                                <option value="Surat">Surat</option>
+                                                <option value="Ahmedabad">Ahmedabad</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-2" style="text-align: center;">
@@ -73,9 +77,11 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5" style="padding-left: 0;">
-                                        <div class="form-group">
-                                            <input type="text" name="to" class="form-control" placeholder="To*">
-                                        </div>
+                                        <select class="form-control" name="to">
+                                            <option value="Surat">Surat</option>
+                                            <option value="Rajkot">Rajkot</option>
+                                            <option value="Ahmedabad">Ahmedabad</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
