@@ -1,3 +1,4 @@
+/* For top margin */
 .form-top-margin{
     margin-top: 2%;
 }
@@ -5,7 +6,6 @@
 /* For heading of sign up page and admin panel page*/ 
 .heading{
     color: #668cff;
-    padding-bottom: 2%;
 }
 
 /* For every label in sign up page and admin panel page*/

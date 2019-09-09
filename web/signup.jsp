@@ -14,7 +14,7 @@
                 <div class="col-md-12 pr-0 pl-0">
                     <nav class="navbar navbar-expand-md navbar-light bg-light">
                         <a class="navbar-brand mr-0" href="index.jsp">
-                            <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
+                            <img src="static/images/Swift-Air-Logo.png" style="width: 35%; height: 50%;">
                         </a>
                         <div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
