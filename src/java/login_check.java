@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class login_check extends HttpServlet {
 
@@ -36,8 +37,13 @@ public class login_check extends HttpServlet {
             /* Checking whether user entered is right or not */
             if(rs.next()){
                 String user = rs.getString(2);
+                
+                // Setting up user session
+                HttpSession session = request.getSession();
+                session.setAttribute("current_user", user);
+                
                 /* Sending redirect to dashboard.jsp with username*/
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp?username="+user);
+                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
             } else {
                 /* Sending redirect to login.jsp again */
                 response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp?log-in=fail");

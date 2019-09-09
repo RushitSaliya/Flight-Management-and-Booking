@@ -1,5 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +15,12 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
         
+        <%
+            if(session.getAttribute("current_user") == null) {
+                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp");
+            }
+        %>
+        
         <!-- function to get selected seat ID -->
         <script>
             function getID(id) {
@@ -22,16 +29,24 @@
             }
         </script>
         
-        
         <%
             String seat_no = request.getParameter("id");
             pageContext.setAttribute("seat_no", seat_no);
         %>
         
          <div class="container-fluid">
-             <div class="row">
-                <div class="col-md-12">
-                    <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%;">Welcome <% out.print(request.getParameter("username")); %>!</div>
+            <div class="card mt-md-2 mb-md-2">
+                <div class="card-body" style="padding: 0 15px 0 15px;">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%;">Welcome, <strong><% out.print(session.getAttribute("current_user")); %></strong></div>
+                        </div>
+                        <div class="col-md-2">
+                            <form method="POST" action="Logout">
+                                <button class="btn btn-outline-primary mt-md-3 mb-md-3" style="float: right;">Logout</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -44,7 +59,7 @@
                           <a class="nav-link" href="#passengerInformation" role="tab" data-toggle="tab">Passenger information</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm ticket</a>
+                          <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm details</a>
                         </li>
                     </ul>
                     <!-- TAB PANES -->
@@ -56,7 +71,7 @@
                                     <div class="heading-info display-3 mt-md-3" style="color: #668cff; text-align: center;">
                                         Choose your Seat
                                     </div>
-                                    <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 33.5%; margin-right: 30%; margin-top: 2%; padding-top: 4%;">
+                                    <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 33.5%; margin-right: 30%; margin-top: 1%; padding-top: 4%;">
                                         <% int number = 1; %>
                                         <div class="number-top" style="margin-top: 2%; margin-left: 8%;"><% out.print(number++); %></div>
                                         <c:forEach var="k" begin="1" end="2">
@@ -97,7 +112,7 @@
                                 <div class="col-md-2">
                                     <div class="mt-md-4">
                                         <div class="display-4" style="font-size: 25px;">
-                                            <strong>Seat no.</strong>: ${seat_no}
+                                            <strong>Seat no.</strong> ${seat_no}
                                         </div>
                                         <button class="btn btn-outline-primary mt-md-2" id="next">Next</button>
                                     </div>
@@ -111,17 +126,17 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="" method="">
+                                            <form action="dashboard.jsp" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-xs-12 col-md-12 mb-3">
                                                         <label class="label-info">Name</label>
-                                                        <input type="text" class="form-control" placeholder="Full name" required>
+                                                        <input type="text" name="name" class="form-control" placeholder="Full name" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-12 mb-3">
                                                         <label class="label-info">Age</label>
-                                                        <input type="text" class="form-control" required placeholder="Enter your age">
+                                                        <input type="text" name="age" class="form-control" required placeholder="Enter your age">
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
@@ -142,18 +157,18 @@
                                                 <div class="form-row">
                                                     <div class="col-md-12 mb-3">
                                                         <label class="label-info">Mobile no</label>
-                                                        <input type="text" class="form-control" placeholder="1234567890" required>
+                                                        <input type="text" name="mobile" class="form-control" placeholder="1234567890" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-12 mb-3">
                                                         <label class="label-info">Email</label>
-                                                        <input type="mail" class="form-control" placeholder="abc@xyz.com" required>
+                                                        <input type="mail" name="email" class="form-control" placeholder="abc@xyz.com" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-4 mb-3 submit-pad">
-                                                        <button id="confirmTicket_button" class="btn btn-outline-primary" type="submit">Submit</button>
+                                                        <button id="confirmTicket_button" class="btn btn-outline-primary" type="submit">Next</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -162,19 +177,19 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Confirm ticket tab -->
+                        <!-- Confirm details tab -->
                         <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
-                        <label class="heading-info display-3">Please confirm your ticket</label>
+                        <label class="heading-info display-3">Please confirm your details</label>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-body">
                                             <form action="" method="">
-                                                <label class="label-info row"><strong>Name</strong> : Abc Xyz</label>
-                                                <label class="label-info row"><strong>Age</strong> : 18 years</label>
-                                                <label class="label-info row"><strong>Gender</strong> : Male</label>
-                                                <label class="label-info row"><strong>Mobile no.</strong> : 40213013264</label>
-                                                <label class="label-info row"><strong>Email</strong> : abc@xyz.com</label>
+                                                <label class="label-info row"><strong>Name</strong> : <% out.print(request.getParameter("name")); %></label>
+                                                <label class="label-info row"><strong>Age</strong> : <% out.print(request.getParameter("age")); %></label>
+                                                <label class="label-info row"><strong>Gender</strong> : <% out.print(request.getParameter("gender")); %></label>
+                                                <label class="label-info row"><strong>Mobile no.</strong> : <% out.print(request.getParameter("mobile")); %></label>
+                                                <label class="label-info row"><strong>Email</strong> : <% out.print(request.getParameter("email")); %></label>
                                                 <label class="label-info row"><strong>Flight name</strong> : Air India 5623S Boeing aircraft</label>
                                                 <label class="label-info row"><strong>Seat no</strong> : ${seat_no}</label>
                                                 <label class="label-info row"><strong>Boarding time</strong> : 11:00:00 Aug 15, 2020 IST</label>
@@ -183,7 +198,7 @@
                                                 <label class="label-info row"><strong>Journey duration</strong> : 8 hours</label>
                                                 <div class="form-row">
                                                     <div class="col-md-4 mb-3 submit-pad">
-                                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                                        <button class="btn btn-outline-primary" type="submit">Send ticket</button>
                                                     </div>
                                                 </div>
                                             </form>
