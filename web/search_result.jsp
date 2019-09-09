@@ -67,16 +67,6 @@
                         <div class="display-4 text-center" style="font-size: 150%; margin-bottom: 2%;"><% out.print(size); %> results found for <% out.print(request.getParameter("from")); %> to 
                             <% out.print(request.getParameter("to")); %>
                         </div>
-                        <c:forEach begin="1" end="${rst1.getRow() + 1}">
-                            <div class="card card-body result">
-                                <div class="result-line big-font">
-                                    <span class="float-left">
-                                        <% out.print(rst.getString("flight_name")); %>
-                                    </span>
-                                    <span class="float-right">
-                                        <% out.print("$ " + rst.getString("flight_price")); %>
-                                    </span>
-                                </div>
                                 <c:forEach begin="1" end="${rst1.getRow() + 1}">
                                     <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;">
                                         <div class="card card-body result">
@@ -102,19 +92,6 @@
                                         rst.next();
                                     %>
                                 </c:forEach>
-                                <div class="mid-font">
-                                    <span class="float-left">
-                                        <% out.print(rst.getString("flight_time")); %>
-                                    </span>
-                                    <div class="text-center"><% out.print(rst.getString("flight_duration")); %>
-                                        <span class="float-right"> <% out.print(rst.getString("flight_available_seats")); %> seats</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <%  // making ResultSet point to next record
-                                rst.next();
-                            %>
-                        </c:forEach>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3"></div>
