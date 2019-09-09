@@ -13,6 +13,21 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
+        
+        <!-- function to get selected seat ID -->
+        <script>
+            function getID(id) {
+                var element_id = id;
+                window.location.replace("?id=" + element_id);
+            }
+        </script>
+        
+        
+        <%
+            String seat_no = request.getParameter("id");
+            pageContext.setAttribute("seat_no", seat_no);
+        %>
+        
          <div class="container-fluid">
              <div class="row">
                 <div class="col-md-12">
@@ -36,45 +51,57 @@
                     <!-- Seat map tab -->
                     <div class="tab-content">
                         <div role="tabpanel" class="tab-pane active" id="seatMap" style="text-align: center;">
-                            <div class="heading-info display-3 mt-md-3" style="color: #668cff;">
-                                Choose your Seat
-                            </div>
-                            <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 36%; margin-right: 30%; margin-top: 2%; padding-top: 4%;">
-                                <% int number = 1; %>
-                                <div class="number-top" style="margin-top: 2%; margin-left: 8%;"><% out.print(number++); %></div>
-                                <c:forEach var="k" begin="1" end="2">
-                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
-                                </c:forEach>
-                                <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
-                                <c:forEach var="k" begin="1" end="4">
-                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
-                                </c:forEach>
-                                <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
-                                <c:forEach var="k" begin="1" end="2">
-                                    <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
-                                </c:forEach>
-                                <c:forTokens items="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T" delims="," var="vertical_var">
-                                    <c:set var="num" value="1" />
-                                    <div class="char"><c:out value="${vertical_var}" /></div>
-                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
-                                    <c:set var="num" value="${num+1}" />
-                                    <c:forEach var="k" begin="1" end="2">
-                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
-                                        <c:set var="num" value="${num+1}" />
-                                    </c:forEach>
-                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 13%;"></div>
-                                    <c:set var="num" value="${num+1}" />
-                                    <c:forEach var="k" begin="1" end="4">
-                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
-                                        <c:set var="num" value="${num+1}" />
-                                    </c:forEach>
-                                    <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 13%;"></div>
-                                    <c:set var="num" value="${num+1}" />
-                                    <c:forEach var="k" begin="1" end="2">
-                                        <div class="seat" id="${vertical_var}${num}" style="margin-top: 2%; margin-left: 2%;"></div>
-                                        <c:set var="num" value="${num+1}" />
-                                    </c:forEach>
-                                </c:forTokens>
+                            <div class="row">
+                                <div class="col-md-10">
+                                    <div class="heading-info display-3 mt-md-3" style="color: #668cff; text-align: center;">
+                                        Choose your Seat
+                                    </div>
+                                    <div class="plane-body pb-md-3 mb-md-3" style="margin-left: 33.5%; margin-right: 30%; margin-top: 2%; padding-top: 4%;">
+                                        <% int number = 1; %>
+                                        <div class="number-top" style="margin-top: 2%; margin-left: 8%;"><% out.print(number++); %></div>
+                                        <c:forEach var="k" begin="1" end="2">
+                                            <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                        </c:forEach>
+                                        <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
+                                        <c:forEach var="k" begin="1" end="4">
+                                            <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                        </c:forEach>
+                                        <div class="number-top" style="margin-top: 2%; margin-left: 13%;"><% out.print(number++); %></div>
+                                        <c:forEach var="k" begin="1" end="2">
+                                            <div class="number-top" style="margin-top: 2%; margin-left: 2%;"><% out.print(number++); %></div>
+                                        </c:forEach>
+                                        <c:forTokens items="A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T" delims="," var="vertical_var">
+                                            <c:set var="num" value="1" />
+                                            <div class="char"><c:out value="${vertical_var}" /></div>
+                                            <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 2%;"></div>
+                                            <c:set var="num" value="${num+1}" />
+                                            <c:forEach var="k" begin="1" end="2">
+                                                <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 2%;"></div>
+                                                <c:set var="num" value="${num+1}" />
+                                            </c:forEach>
+                                            <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 13%;"></div>
+                                            <c:set var="num" value="${num+1}" />
+                                            <c:forEach var="k" begin="1" end="4">
+                                                <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 2%;"></div>
+                                                <c:set var="num" value="${num+1}" />
+                                            </c:forEach>
+                                            <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 13%;"></div>
+                                            <c:set var="num" value="${num+1}" />
+                                            <c:forEach var="k" begin="1" end="2">
+                                                <div class="seat" id="${vertical_var}${num}" onclick="getID(this.id);" style="margin-top: 2%; margin-left: 2%;"></div>
+                                                <c:set var="num" value="${num+1}" />
+                                            </c:forEach>
+                                        </c:forTokens>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="mt-md-4">
+                                        <div class="display-4" style="font-size: 25px;">
+                                            <strong>Seat no.</strong>: ${seat_no}
+                                        </div>
+                                        <button class="btn btn-outline-primary mt-md-2" id="next">Next</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!-- Passenger information tab -->
@@ -126,7 +153,7 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col-md-4 mb-3 submit-pad">
-                                                        <button id="confirmTicket_button" class="btn btn-primary" type="submit">Submit</button>
+                                                        <button id="confirmTicket_button" class="btn btn-outline-primary" type="submit">Submit</button>
                                                     </div>
                                                 </div>
                                             </form>
@@ -149,7 +176,7 @@
                                                 <label class="label-info row"><strong>Mobile no.</strong> : 40213013264</label>
                                                 <label class="label-info row"><strong>Email</strong> : abc@xyz.com</label>
                                                 <label class="label-info row"><strong>Flight name</strong> : Air India 5623S Boeing aircraft</label>
-                                                <label class="label-info row"><strong>Seat no</strong> : AB12</label>
+                                                <label class="label-info row"><strong>Seat no</strong> : ${seat_no}</label>
                                                 <label class="label-info row"><strong>Boarding time</strong> : 11:00:00 Aug 15, 2020 IST</label>
                                                 <label class="label-info row"><strong>Boarding point</strong> : ABC airport, XYZW</label>
                                                 <label class="label-info row"><strong>Journey</strong> : ABC to XYZ</label>
