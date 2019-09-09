@@ -9,6 +9,8 @@
         <servlet-class>login_check</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Logout</servlet-class>
         <servlet-name>admin</servlet-name>
         <servlet-class>admin</servlet-class>
     </servlet>
@@ -21,6 +23,8 @@
         <url-pattern>/login_check</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
     </servlet-mapping>
