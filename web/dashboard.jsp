@@ -16,7 +16,7 @@
          <div class="container-fluid">
              <div class="row">
                 <div class="col-md-12">
-                    <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%;">Welcome RushitSaliya!</div>
+                    <div class="display-4 mt-md-3 mb-md-3" style="font-size: 200%;">Welcome <% out.print(request.getParameter("username")); %>!</div>
                 </div>
             </div>
             <div class="row">

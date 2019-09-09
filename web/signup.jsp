@@ -16,22 +16,6 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
                         </a>
-                        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Statistics</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Estimation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>

@@ -35,8 +35,9 @@ public class login_check extends HttpServlet {
             
             /* Checking whether user entered is right or not */
             if(rs.next()){
-                /* Sending redirect to dashboard.jsp */
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
+                String user = rs.getString(2);
+                /* Sending redirect to dashboard.jsp with username*/
+                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp?username="+user);
             } else {
                 /* Sending redirect to login.jsp again */
                 response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp?log-in=fail");
