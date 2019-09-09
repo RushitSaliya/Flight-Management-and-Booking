@@ -19,22 +19,6 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
                         </a>
-                        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                            <ul class="navbar-nav mr-auto">
-                                <li class="nav-item">
-                                    <a class="nav-link pl-0" href="#">Statistics</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Estimation</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                            </ul>
-                        </div>
                         <div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
@@ -53,20 +37,20 @@
                     </nav>
                 </div>
             </div>
-            <div class="row index-page-image card text-left">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-4 mb-3"></div>
-                        <div class="col-md-4 mb-3">
-                            <%  if("fail".equals(request.getParameter("log-in"))){%>
-                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                    Please check username and password!
-                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                            <%  }%>
-                            <h1 class="text-center heading">Log in</h1>
+            <div class="row text-left form-top-margin">
+                <div class="col-md-4 mb-3"></div>
+                <div class="col-md-4 mb-3">
+                    <%  if("fail".equals(request.getParameter("log-in"))){%>
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            Please check username and password!
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                         </div>
+                    <%  }%>
+                    <h1 class="text-center heading">Log in</h1>
+                    <div class="card">
+                        <div class="card-body">
                             <form method="post" action="login_check">
                                 <div class="form-row">
                                     <div class="col-xs-12 col-md-12 mb-3">
@@ -87,9 +71,9 @@
                                 </div>
                             </form>
                         </div>
-                        <div class="col-md-4 mb-3"></div>
                     </div>
                 </div>
+                <div class="col-md-4 mb-3"></div>
             </div>
         </div>
     </body>
