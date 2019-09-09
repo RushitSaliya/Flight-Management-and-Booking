@@ -9,13 +9,10 @@
         <servlet-class>login_check</servlet-class>
     </servlet>
     <servlet>
-<<<<<<< HEAD
         <servlet-name>Logout</servlet-name>
         <servlet-class>Logout</servlet-class>
-=======
         <servlet-name>admin</servlet-name>
         <servlet-class>admin</servlet-class>
->>>>>>> 8ef6f9b89993b8244d0caa1bb42560e6ce728bd8
     </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>
@@ -26,13 +23,10 @@
         <url-pattern>/login_check</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-<<<<<<< HEAD
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
-=======
         <servlet-name>admin</servlet-name>
         <url-pattern>/admin</url-pattern>
->>>>>>> 8ef6f9b89993b8244d0caa1bb42560e6ce728bd8
     </servlet-mapping>
     <session-config>
         <session-timeout>
