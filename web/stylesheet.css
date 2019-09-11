@@ -4,8 +4,9 @@
 
 /* For heading of sign up page and admin panel page*/ 
 .heading{
+    margin-top: 1%;
     color: #668cff;
-    padding-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 /* For every label in sign up page and admin panel page*/
