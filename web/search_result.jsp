@@ -16,6 +16,16 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
+        
+        <!-- function to get selected seat ID -->
+        <script>
+            function getID(id) {
+                // window.location.replace("/login.jsp?id=" + id);
+                localStorage.setItem("flight_id", id);
+                localStorage.setItem("flag", 0);
+            }
+        </script>
+        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -68,7 +78,7 @@
                             <% out.print(request.getParameter("to")); %>
                         </div>
                                 <c:forEach begin="1" end="${rst1.getRow() + 1}">
-                                    <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;">
+                                    <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;" id="<%= rst.getString("flight_id") %>" onclick="getID(this.id);">
                                         <div class="card card-body result">
                                             <div class="result-line big-font">
                                                 <span class="float-left">

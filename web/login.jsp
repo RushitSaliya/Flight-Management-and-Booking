@@ -12,6 +12,8 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
+        <script type="text/javascript" src="flightID.js"></script>
+        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -67,6 +69,11 @@
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3 submit-pad">
                                         <button class="btn btn-outline-primary" type="submit">Login</button>
+                                        
+                                        <% 
+                                            session.setAttribute("flight_id", request.getParameter("flight_id"));
+                                        %>
+        
                                     </div>
                                 </div>
                             </form>
