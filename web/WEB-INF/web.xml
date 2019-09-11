@@ -13,8 +13,12 @@
         <servlet-class>Logout</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>admin</servlet-name>
-        <servlet-class>admin</servlet-class>
+        <servlet-name>admin_data</servlet-name>
+        <servlet-class>admin_data</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getFlightData</servlet-name>
+        <servlet-class>getFlightData</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>
@@ -29,8 +33,12 @@
         <url-pattern>/Logout</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>admin</servlet-name>
-        <url-pattern>/admin</url-pattern>
+        <servlet-name>admin_data</servlet-name>
+        <url-pattern>/admin_data</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getFlightData</servlet-name>
+        <url-pattern>/getFlightData</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -3,6 +3,7 @@
 
 <%@page import="java.sql.*" %>
 <%@page import="Database.DatabaseConnection" %>
+<%@page import="javax.servlet.http.HttpSession" %>
 
 <!DOCTYPE html>
 <html>
@@ -18,12 +19,11 @@
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
         <script>
-            function getID(id){
-                var element_id = id;
-                window.location.replace("?id=" + element_id);
+            function changeOption(){
+                var flightid = document.getElementById("flightchange").value;
+                document.location.href = "http://localhost:8080/Flight-Management-and-Booking/getFlightData?flightid=" + flightid;
             }
         </script>
-            
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -32,23 +32,9 @@
                             <img src="static/images/Swift-Air-Logo.png" style="width: 35%; height: 50%;">
                         </a>
                         <div class="nav-btn">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-                        </div>
-                        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                            <ul class="navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">
-                                        Sign In
-                                    </a>
-                                </li>
-                                <li class="nav-item active">
-                                    <a class="nav-link logout-link" href="#">
-                                        Sign Up
-                                    </a>
-                                </li>
-                            </ul>
                         </div>
                     </nav>
                 </div>
@@ -68,61 +54,62 @@
                         <!-- Modify flight details tab -->
                         <div role="tabpanel" class="row tab-pane active" id="modifyFlightDetails">
                             <div class="col-md-6 mb-3" style="margin-top: 1%; padding-left: 30px;">
-                                <form action="admin" method="post">
+                                <form action="admin_data" method="post">
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter Flight name</label>
-                                            <select class="form-control">
+                                            <select class="form-control" id="flightchange" onchange="changeOption()" name="flight-name">
+                                                <option disabled selected>Choose flight</option>
                                                 <%  // fetching flight details from 'index.jsp'
                                                     Connection con = new DatabaseConnection().getConnection();
-                                                    PreparedStatement stmt = con.prepareStatement("SELECT flight_name FROM flight");
+                                                    PreparedStatement stmt = con.prepareStatement("SELECT flight_name, flight_id FROM flight");
                                                     ResultSet rst = stmt.executeQuery();
                                                     while(rst.next()){
                                                 %>
-                                                <option value=<% out.print(rst.getString(1)); %> ><% out.print(rst.getString(1)); %></option>
-                                                <% } %>
+                                                <option value=<%= rst.getString(2) %> ><%= rst.getString(1) %></option>
+                                                <% } con.close(); %>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter airport name</label>
-                                            <input class="form-control" type="text" name="modify-airport-name" placeholder="Enter airport name from where flight will depart"/>
+                                            <input class="form-control" type="text" value=<%= session.getAttribute("get_airport_name") %> name="airport-name" placeholder="Enter airport name from where flight will depart"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter destination</label>
-                                            <input class="form-control" type="text" name="modify-dest-airport-name" placeholder="Enter destination airport"/>
+                                            <input class="form-control" type="text" id="destairportname" value="" name="dest-airport-name" placeholder="Enter destination airport"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure Date</label>
-                                            <input class="form-control" type="date" name="modify-dept-date" placeholder="Enter departure date"/>
+                                            <input class="form-control" type="date" id="destdate" name="dest-date" placeholder="Enter departure date"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure time</label>
-                                            <input class="form-control" type="text" name="modify-dept-time" placeholder="Enter departure time"/>
+                                            <input class="form-control" type="text" id="desttime" value=<%= session.getAttribute("get_dest_time") %> name="dest-time" placeholder="Enter departure time"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Journey hours</label>
-                                            <input class="form-control" type="text" name="modify-journey-hours" placeholder="Enter journey hours"/>
+                                            <input class="form-control" type="text" id="journeyhours" name="journey-hours" placeholder="Enter journey hours"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Ticket price</label>
-                                            <input class="form-control" type="text" name="modify-ticket-price" placeholder="Enter ticket price in $"/>
+                                            <input class="form-control" type="text" id="ticketprice" name="ticket-price" placeholder="Enter ticket price in $"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3 submit-pad">
-                                            <button class="btn btn-primary btn-outline-primary" id="modifyflight" onclick="getID(this.id);" type="submit">Modify</button>
+                                            <button class="btn btn-primary btn-outline-primary" name="button-value" value="modify" type="submit">Modify</button>
                                         </div>
                                     </div>
                                 </form>
@@ -131,52 +118,52 @@
                         <!-- Add new flight details tab -->
                         <div role="tabpanel" class="tab-pane fade" id="addNewFlightDetails">
                             <div class="col-md-6 mb-3" style="margin-top: 1%;">
-                                <form action="admin" method="post">
+                                <form action="admin_data" method="post">
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter Flight name</label>
-                                            <input class="form-control" type="text" name="new-flight-name" placeholder="Enter full flight name"/>
+                                            <input class="form-control" type="text" name="flight-name" placeholder="Enter full flight name"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter airport name</label>
-                                            <input class="form-control" type="text" name="new-airport-name" placeholder="Enter airport name from where flight will depart"/>
+                                            <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter destination</label>
-                                            <input class="form-control" type="text" name="new-dept-airport-name" placeholder="Enter destination airport"/>
+                                            <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure Date</label>
-                                            <input class="form-control" type="date" name="new-dept-date" placeholder="Enter departure date"/>
+                                            <input class="form-control" type="date" name="dest-date" placeholder="Enter departure date"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure time</label>
-                                            <input class="form-control" type="text" name="new-dept-time" placeholder="Enter departure time"/>
+                                            <input class="form-control" type="text" name="dest-time" placeholder="Enter departure time"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Journey hours</label>
-                                            <input class="form-control" type="text" name="new-journey-hours" placeholder="Enter journey hours"/>
+                                            <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Ticket price</label>
-                                            <input class="form-control" type="text" name="new-ticket-price" placeholder="Enter ticket price in $"/>
+                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-md-4 mb-3 submit-pad">
-                                            <button class="btn btn-primary btn-outline-primary" id="addflight" onclick="getID(this.id);" type="submit">Add flight</button>
+                                            <button class="btn btn-primary btn-outline-primary" name="button-value" value="add" type="submit">Add flight</button>
                                         </div>
                                     </div>
                                 </form>
