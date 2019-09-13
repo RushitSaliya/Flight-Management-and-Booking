@@ -14,10 +14,10 @@
                 <div class="col-md-12 pr-0 pl-0">
                     <nav class="navbar navbar-expand-md navbar-light bg-light">
                         <a class="navbar-brand mr-0" href="index.jsp">
-                            <img src="static/images/Swift-Air-Logo.png" style="width: 60%; height: 50%;">
+                            <img src="static/images/Swift-Air-Logo.png" style="width: 35%; height: 50%;">
                         </a>
                         <div class="nav-btn">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2"   aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                         </div>
@@ -57,11 +57,11 @@
                                         <label class="label-input">Gender</label>
                                         <div class="input-group">
                                             <div class="input-group-prepend">
-                                                <input class="radio-btn-input" type="radio" name="gender" value="male">
+                                                <input class="radio-btn-input" type="radio" name="gender" value="male" required="">
                                                 <label class="label-input">Male</label>
-                                                <input class="radio-btn-input" type="radio" name="gender" value="female">
+                                                <input class="radio-btn-input" type="radio" name="gender" value="female" required="">
                                                 <label class="label-input">Female</label>
-                                                <input class="radio-btn-input" type="radio" name="gender" value="other">
+                                                <input class="radio-btn-input" type="radio" name="gender" value="other" required="">
                                                 <label class="label-input">Other</label>
                                             </div>
                                         </div>

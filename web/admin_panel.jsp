@@ -13,7 +13,12 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Swift Airways</title>
     </head>
-    <body>
+   <body>
+        <%
+            if(session.getAttribute("current_user") == null) {
+                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp");
+            }
+        %>
         <script type="text/javascript" src="JS/jquery.min.js"></script>
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
@@ -31,10 +36,16 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 35%; height: 50%;">
                         </a>
-                        <div class="nav-btn">
+                        <%--<div class="nav-btn">
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
+                        </div>--%>
+                        <div class="col-md-6"></div>
+                        <div class="col-md-2">
+                            <form method="POST" action="Logout">
+                                <button class="btn btn-outline-primary mt-md-3 mb-md-3" style="float: right; color: white;border-color: white;">Logout</button>
+                            </form>
                         </div>
                     </nav>
                 </div>
@@ -58,7 +69,7 @@
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter Flight name</label>
-                                            <select class="form-control" id="flightchange" onchange="changeOption()" name="flight-name">
+                                            <select class="form-control" id="flightchange" onchange="changeOption()" name="flight-id">
                                                 <option disabled selected>Choose flight</option>
                                                 <%  // fetching flight details from 'index.jsp'
                                                     Connection con = new DatabaseConnection().getConnection();
@@ -66,45 +77,55 @@
                                                     ResultSet rst = stmt.executeQuery();
                                                     while(rst.next()){
                                                 %>
-                                                <option value=<%= rst.getString(2) %> ><%= rst.getString(1) %></option>
+                                                <option value="<%= rst.getString(2) %>" ><%= rst.getString(1) %></option>
                                                 <% } con.close(); %>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Selected Flight name</label>
+                                            <input class="form-control" type="text" name="flight-name" value="<%= session.getAttribute("get_flight_name") %>" />
+                                        </div>
+                                    </div>        
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter airport name</label>
-                                            <input class="form-control" type="text" value=<%= session.getAttribute("get_airport_name") %> name="airport-name" placeholder="Enter airport name from where flight will depart"/>
+                                            <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart"
+                                                   value="<%= session.getAttribute("get_airport_name") %>" />
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter destination</label>
-                                            <input class="form-control" type="text" id="destairportname" value="" name="dest-airport-name" placeholder="Enter destination airport"/>
+                                            <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport"
+                                                   value="<%= session.getAttribute("get_dest_airport_name") %>" />
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure Date</label>
-                                            <input class="form-control" type="date" id="destdate" name="dest-date" placeholder="Enter departure date"/>
+                                            <input class="form-control" type="date"name="dest-date" placeholder="Enter departure date"
+                                                   value="<%= session.getAttribute("get_dest_date") %>" />
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure time</label>
-                                            <input class="form-control" type="text" id="desttime" value=<%= session.getAttribute("get_dest_time") %> name="dest-time" placeholder="Enter departure time"/>
+                                            <input class="form-control" type="text"name="dest-time" placeholder="Enter departure time" value="<%= session.getAttribute("get_dest_time") %>" />
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Journey hours</label>
-                                            <input class="form-control" type="text" id="journeyhours" name="journey-hours" placeholder="Enter journey hours"/>
+                                            <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours"
+                                                   value="<%= String.valueOf(session.getAttribute("get_journey_hours")).replace('+',' ') %>"/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Ticket price</label>
-                                            <input class="form-control" type="text" id="ticketprice" name="ticket-price" placeholder="Enter ticket price in $"/>
+                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $" value="<%= session.getAttribute("get_ticket_price") %>" />
                                         </div>
                                     </div>
                                     <div class="form-row">
