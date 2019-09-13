@@ -1,6 +1,8 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+<%@page import="java.sql.*" %>
+<%@page import="Database.DatabaseConnection" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +16,7 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
+        <script type="text/javascript" src="flightID.js.js"></script>
         
         <%
             if(session.getAttribute("current_user") == null) {
@@ -31,7 +34,14 @@
         
         <%
             String seat_no = request.getParameter("id");
-            pageContext.setAttribute("seat_no", seat_no);
+            if(seat_no != null) {
+                session.setAttribute("seat_no", seat_no);
+            }
+            Connection con = new DatabaseConnection().getConnection();
+            Statement stmt = con.createStatement();
+            String s = (String)session.getAttribute("flight_id");
+            ResultSet rst = stmt.executeQuery("SELECT * FROM flight WHERE flight_id=" + s);
+            rst.next();
         %>
         
          <div class="container-fluid">
@@ -53,13 +63,13 @@
                 <div class="col-md-12">
                     <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" href="#seatMap" role="tab" data-toggle="tab" aria-selected="true">Seat map</a>
+                            <a class="nav-link active" href="#seatMap" role="tab" data-toggle="tab" aria-selected="true">Seat map</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#passengerInformation" role="tab" data-toggle="tab">Passenger information</a>
+                            <a class="nav-link" href="#passengerInformation" role="tab" data-toggle="tab">Passenger information</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm details</a>
+                            <a class="nav-link" href="#confirmTicket" role="tab" data-toggle="tab">Confirm details</a>
                         </li>
                     </ul>
                     <!-- TAB PANES -->
@@ -126,7 +136,7 @@
                                 <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="dashboard.jsp" method="POST">
+                                            <form action="" method="POST">
                                                 <div class="form-row">
                                                     <div class="col-xs-12 col-md-12 mb-3">
                                                         <label class="label-info">Name</label>
@@ -179,23 +189,55 @@
                         </div>
                         <!-- Confirm details tab -->
                         <div role="tabpanel" class="tab-pane fade" id="confirmTicket">
-                        <label class="heading-info display-3">Please confirm your details</label>
+                            <label class="heading-info display-3">Please confirm your details</label>
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="" method="">
-                                                <label class="label-info row"><strong>Name</strong> : <% out.print(request.getParameter("name")); %></label>
-                                                <label class="label-info row"><strong>Age</strong> : <% out.print(request.getParameter("age")); %></label>
-                                                <label class="label-info row"><strong>Gender</strong> : <% out.print(request.getParameter("gender")); %></label>
-                                                <label class="label-info row"><strong>Mobile no.</strong> : <% out.print(request.getParameter("mobile")); %></label>
-                                                <label class="label-info row"><strong>Email</strong> : <% out.print(request.getParameter("email")); %></label>
-                                                <label class="label-info row"><strong>Flight name</strong> : Air India 5623S Boeing aircraft</label>
-                                                <label class="label-info row"><strong>Seat no</strong> : ${seat_no}</label>
-                                                <label class="label-info row"><strong>Boarding time</strong> : 11:00:00 Aug 15, 2020 IST</label>
-                                                <label class="label-info row"><strong>Boarding point</strong> : ABC airport, XYZW</label>
-                                                <label class="label-info row"><strong>Journey</strong> : ABC to XYZ</label>
-                                                <label class="label-info row"><strong>Journey duration</strong> : 8 hours</label>
+                                            <%
+                                                String pass_name = request.getParameter("name");
+                                                String pass_age = request.getParameter("age");
+                                                String pass_gender = request.getParameter("gender");
+                                                String pass_mobile = request.getParameter("mobile");
+                                                String pass_email = request.getParameter("email");
+                                            %>
+                                            <form action="Passenger" method="POST">
+                                                <label class="label-info row"><strong>Name</strong> : 
+                                                    <% 
+                                                        out.print(pass_name); 
+                                                        session.setAttribute("p_name", pass_name); 
+                                                    %>
+                                                </label>
+                                                <label class="label-info row"><strong>Age</strong> : 
+                                                    <% 
+                                                        out.print(pass_age);
+                                                        session.setAttribute("p_age", pass_age);
+                                                    %>
+                                                </label>
+                                                <label class="label-info row"><strong>Gender</strong> : 
+                                                    <% 
+                                                        out.print(pass_gender);
+                                                        session.setAttribute("p_gender", pass_gender);
+                                                    %>
+                                                </label>
+                                                <label class="label-info row"><strong>Mobile no.</strong> : 
+                                                    <% 
+                                                        out.print(pass_mobile);
+                                                        session.setAttribute("p_mobile", pass_mobile);
+                                                    %>
+                                                </label>
+                                                <label class="label-info row"><strong>Email</strong> : 
+                                                    <% 
+                                                        out.print(pass_email);
+                                                        session.setAttribute("p_email", pass_email);
+                                                    %>
+                                                </label>
+                                                <label class="label-info row"><strong>Flight name</strong> : <% out.print(rst.getString("flight_name")); %></label>
+                                                <label class="label-info row"><strong>Seat no</strong> : <% out.print(session.getAttribute("seat_no")); %></label>
+                                                <label class="label-info row"><strong>Boarding time</strong> : <% out.print(rst.getString("flight_time")); %></label>
+                                                <label class="label-info row"><strong>Boarding point</strong> : XXX</label>
+                                                <label class="label-info row"><strong>Journey</strong> : <% out.print(rst.getString("flight_source")); %> to <% out.print(rst.getString("flight_destination")); %></label>
+                                                <label class="label-info row"><strong>Journey duration</strong> : <% out.print(rst.getString("flight_duration")); %></label>
                                                 <div class="form-row">
                                                     <div class="col-md-4 mb-3 submit-pad">
                                                         <button class="btn btn-outline-primary" type="submit">Send ticket</button>
