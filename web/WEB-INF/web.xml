@@ -20,6 +20,10 @@
         <servlet-name>getFlightData</servlet-name>
         <servlet-class>getFlightData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Passenger</servlet-name>
+        <servlet-class>Passenger</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>register</servlet-name>
         <url-pattern>/register</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>getFlightData</servlet-name>
         <url-pattern>/getFlightData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Passenger</servlet-name>
+        <url-pattern>/Passenger</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

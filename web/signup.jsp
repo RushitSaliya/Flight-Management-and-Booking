@@ -99,7 +99,7 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-4 mb-3 submit-pad">
-                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                        <button class="btn btn-primary" type="submit">Sign up</button>
                                     </div>
                                 </div>
                             </form>
