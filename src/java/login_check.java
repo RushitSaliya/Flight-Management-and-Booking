@@ -41,9 +41,13 @@ public class login_check extends HttpServlet {
                 // Setting up user session
                 HttpSession session = request.getSession();
                 session.setAttribute("current_user", user);
-                
-                /* Sending redirect to dashboard.jsp with username*/
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
+                if("user".equals(rs.getString("user_category"))){
+                    /* Sending redirect to dashboard.jsp with username*/
+                    response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
+                } else if("admin".equals(rs.getString("user_category"))) {
+                    /* Sending redirect to dashboard.jsp with username*/
+                    response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/admin_panel.jsp");
+                }
             } else {
                 /* Sending redirect to login.jsp again */
                 response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp?log-in=fail");

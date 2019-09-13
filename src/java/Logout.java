@@ -15,7 +15,6 @@ public class Logout extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("current_user", null);
             session.setAttribute("seat_no", null);
-            
             response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
         }
     }
