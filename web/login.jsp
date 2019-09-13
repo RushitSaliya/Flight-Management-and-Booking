@@ -28,7 +28,6 @@
                         </div>
                         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                             <ul class="navbar-nav ml-auto">
-                                </li>
                                 <li class="nav-item active">
                                     <a class="nav-link logout-link" href="signup.jsp">
                                         Sign Up
