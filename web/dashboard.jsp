@@ -1,5 +1,7 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <%@page import="java.sql.*" %>
 <%@page import="Database.DatabaseConnection" %>
@@ -16,7 +18,8 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
-        <script type="text/javascript" src="flightID.js.js"></script>
+        <script type="text/javascript" src="flightID.js"></script>
+        <script type="text/javascript" src="bookedSeat.js"></script>
         
         <%
             if(session.getAttribute("current_user") == null) {
@@ -32,17 +35,42 @@
             }
         </script>
         
-        <%
+        <%  // to add seat_no to session variable seat_no
             String seat_no = request.getParameter("id");
             if(seat_no != null) {
                 session.setAttribute("seat_no", seat_no);
             }
+            
+            // here we're fetching flight details from flight table
             Connection con = new DatabaseConnection().getConnection();
             Statement stmt = con.createStatement();
             String s = (String)session.getAttribute("flight_id");
             ResultSet rst = stmt.executeQuery("SELECT * FROM flight WHERE flight_id=" + s);
             rst.next();
         %>
+        
+        <sql:setDataSource var="db" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://localhost/flight-management-and-booking" user="root" password="@root"/>
+        <sql:query dataSource="${db}" var="rs">
+            SELECT passenger_seat FROM passenger WHERE flight_id='<%= s %>';
+        </sql:query>
+        
+        <% String temp_seat = ""; %>
+        <c:forEach var="row" items="${rs.rows}">
+            <c:set var="temp_seat" value="${row.passenger_seat}" />
+            <%
+                temp_seat += (String)pageContext.getAttribute("temp_seat");
+                temp_seat += ",";
+            %>
+        </c:forEach>
+        <%
+            temp_seat = temp_seat.substring(0, temp_seat.length() - 1);
+            session.setAttribute("temp_seat", temp_seat);
+        %>
+        <script>
+            localStorage.setItem("temp_seat", "<%= session.getAttribute("temp_seat") %>");
+        </script>
+        <%-- <c:set var="booked_seats_jsp" value="${fn:split(temp_seat, ',')}" />
+        <c:out value="${booked_seats_jsp}" /> --%>
         
          <div class="container-fluid">
             <div class="card mt-md-2 mb-md-2">
