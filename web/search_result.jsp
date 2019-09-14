@@ -70,14 +70,14 @@
                             stmt.setString(3, (String)(request.getParameter("date")));
                             ResultSet rst = stmt.executeQuery();
                             rst.last();
-                            size = rst.getRow();
-                            pageContext.setAttribute("rst1", rst);
+                            size = rst.getInt("flight_id");
+                            pageContext.setAttribute("size", size);
                             rst.first();
                         %>
                         <div class="display-4 text-center" style="font-size: 150%; margin-bottom: 2%;"><% out.print(size); %> results found for <% out.print(request.getParameter("from")); %> to 
                             <% out.print(request.getParameter("to")); %>
                         </div>
-                                <c:forEach begin="1" end="${rst1.getRow() + 1}">
+                                <c:forEach begin="1" end="${size}">
                                     <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;" id="<%= rst.getString("flight_id") %>" onclick="getID(this.id);">
                                         <div class="card card-body result">
                                             <div class="result-line big-font">
