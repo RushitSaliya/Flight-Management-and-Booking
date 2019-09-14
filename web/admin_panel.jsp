@@ -85,47 +85,49 @@
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Selected Flight name</label>
-                                            <input class="form-control" type="text" name="flight-name" value="<%= session.getAttribute("get_flight_name") %>" />
+                                            <input class="form-control" type="text" name="flight-name" value="<%= session.getAttribute("get_flight_name") %>" required/>
                                         </div>
                                     </div>        
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter airport name</label>
                                             <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart"
-                                                   value="<%= session.getAttribute("get_airport_name") %>" />
+                                                   value="<%= session.getAttribute("get_airport_name") %>" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter destination</label>
                                             <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport"
-                                                   value="<%= session.getAttribute("get_dest_airport_name") %>" />
+                                                   value="<%= session.getAttribute("get_dest_airport_name") %>" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure Date</label>
                                             <input class="form-control" type="date"name="dest-date" placeholder="Enter departure date"
-                                                   value="<%= session.getAttribute("get_dest_date") %>" />
+                                                   value="<%= session.getAttribute("get_dest_date") %>" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure time</label>
-                                            <input class="form-control" type="text"name="dest-time" placeholder="Enter departure time" value="<%= session.getAttribute("get_dest_time") %>" />
+                                            <input class="form-control" type="text"name="dest-time" placeholder="Enter departure time" 
+                                                   value="<%= session.getAttribute("get_dest_time") %>" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Journey hours</label>
                                             <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours"
-                                                   value="<%= String.valueOf(session.getAttribute("get_journey_hours")).replace('+',' ') %>"/>
+                                                   value="<%= String.valueOf(session.getAttribute("get_journey_hours")) %>"required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Ticket price</label>
-                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $" value="<%= session.getAttribute("get_ticket_price") %>" />
+                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $"
+                                                   value="<%= session.getAttribute("get_ticket_price") %>" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
@@ -143,43 +145,43 @@
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter Flight name</label>
-                                            <input class="form-control" type="text" name="flight-name" placeholder="Enter full flight name"/>
+                                            <input class="form-control" type="text" name="flight-name" placeholder="Enter full flight name" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter airport name</label>
-                                            <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart"/>
+                                            <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Enter destination</label>
-                                            <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport"/>
+                                            <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure Date</label>
-                                            <input class="form-control" type="date" name="dest-date" placeholder="Enter departure date"/>
+                                            <input class="form-control" type="date" name="dest-date" placeholder="Enter departure date" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Departure time</label>
-                                            <input class="form-control" type="text" name="dest-time" placeholder="Enter departure time"/>
+                                            <input class="form-control" type="text" name="dest-time" placeholder="Enter departure time" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Journey hours</label>
-                                            <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours"/>
+                                            <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="col-xs-12 col-md-12 mb-3">
                                             <label class="label-input">Ticket price</label>
-                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $"/>
+                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $" required/>
                                         </div>
                                     </div>
                                     <div class="form-row">
