@@ -5,19 +5,21 @@
 
 This is a collage mini project for booking and managing flights.
 
+
 ## Getting started
 Below is the guide and requirements to get this application running
 
 
 ### Built with
 
-Following are some technologies that we've used to deveop this project
+Following are some technologies that we've used to develop this project
 
 * Java
 * Servlet
 * JSP
 * JDBC (MySQL Database)
 * jQuery
+
 
 ### Prerequisites
 
@@ -36,6 +38,7 @@ Go to **Git Bash** and write following command to clone this repository
 ```
 $ git clone https://github.com/RushitSaliya/Flight-Management-and-Booking.git
 ```
+
 
 ### Setting up database
 
