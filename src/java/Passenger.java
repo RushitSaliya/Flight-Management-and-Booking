@@ -45,7 +45,7 @@ public class Passenger extends HttpServlet {
                 
                 p_stmt.executeUpdate();
                 
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/dashboard.jsp");
+                response.sendRedirect("dashboard.jsp");
                 
             } catch (SQLException ex) {
                 System.out.println(ex.getMessage());

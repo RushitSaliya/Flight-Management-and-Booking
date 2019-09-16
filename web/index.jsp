@@ -12,6 +12,30 @@
         <script type="text/javascript" src="JS/popper.min.js"></script>
         <script type="text/javascript" src="JS/bootstrap.min.js"></script>
         <script type="text/javascript" src="local.js"></script>
+        
+        <script>
+            function onSourceChange(){
+                var selectobject = document.getElementById("toDestination");
+                for (var i=1; i<selectobject.length; i++) {
+                    if (selectobject.options[i].value == document.getElementById("fromSource").value){
+                        selectobject.options[i].disabled = true;
+                    } else {
+                        selectobject.options[i].disabled = false;
+                    }
+                }
+            }
+            function onDestinationChange(){
+                var selectobject = document.getElementById("fromSource");
+                for (var i=1; i<selectobject.length; i++) {
+                    if (selectobject.options[i].value == document.getElementById("toDestination").value){
+                        selectobject.options[i].disabled = true;
+                    } else {
+                        selectobject.options[i].disabled = false;
+                    }
+                }
+            }
+        </script>
+        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 pr-0 pl-0">
@@ -62,7 +86,8 @@
                                 <div class="row">
                                     <div class="col-md-5" style="padding-right: 0;">
                                         <div class="form-group">
-                                            <select class="form-control" name="from">
+                                            <select  id="fromSource" class="form-control" name="from" onchange="onSourceChange()">
+                                                <option disabled selected>Select source</option>
                                                 <option value="Rajkot">Rajkot</option>
                                                 <option value="Surat">Surat</option>
                                                 <option value="Ahmedabad">Ahmedabad</option>
@@ -77,9 +102,10 @@
                                         </div>
                                     </div>
                                     <div class="col-md-5" style="padding-left: 0;">
-                                        <select class="form-control" name="to">
-                                            <option value="Surat">Surat</option>
+                                        <select id="toDestination" class="form-control" name="to" onchange="onDestinationChange()">
+                                            <option disabled selected>Select destination</option>
                                             <option value="Rajkot">Rajkot</option>
+                                            <option value="Surat">Surat</option>
                                             <option value="Ahmedabad">Ahmedabad</option>
                                         </select>
                                     </div>

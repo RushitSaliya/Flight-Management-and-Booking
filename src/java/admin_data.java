@@ -79,9 +79,9 @@ public class admin_data extends HttpServlet {
 //            Closing connection 
             con.close();
             if(success==1){
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/admin_panel.jsp?result=success");
+                response.sendRedirect("admin_panel.jsp?result=success");
             } else {
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/admin_panel.jsp?result=failed");
+                response.sendRedirect("admin_panel.jsp?result=failed");
             }
         }
     }

@@ -59,7 +59,7 @@ public class register extends HttpServlet {
                 // executing INSERT query
                 stmt.executeUpdate();
                 
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/index.jsp?signup=success");
+                response.sendRedirect("index.jsp?signup=success");
                 
             } catch(SQLException e) {
                 System.out.println(e.getMessage());
