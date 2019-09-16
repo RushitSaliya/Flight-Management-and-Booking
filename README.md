@@ -2,6 +2,7 @@
 
 [![NetBeansIDE: v8.2](https://img.shields.io/badge/NetBeans%20IDE-v8.2-blue)](https://netbeans.org/downloads/8.2/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![download](https://img.shields.io/badge/download-v1.0-yellow)](https://github.com/RushitSaliya/Flight-Management-and-Booking/releases)
 
 This is a collage mini project for booking and managing flights.
 
