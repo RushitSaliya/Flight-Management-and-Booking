@@ -23,7 +23,7 @@
         
         <%
             if(session.getAttribute("current_user") == null) {
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp");
+                response.sendRedirect("login.jsp");
             }
         %>
         
@@ -63,7 +63,10 @@
             %>
         </c:forEach>
         <%
-            temp_seat = temp_seat.substring(0, temp_seat.length() - 1);
+            // if some flight is completely empty then we're not supposed to get substring
+            if(temp_seat.length() >= 1) {
+                temp_seat = temp_seat.substring(0, temp_seat.length() - 1);
+            }
             session.setAttribute("temp_seat", temp_seat);
         %>
         <script>

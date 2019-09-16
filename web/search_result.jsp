@@ -62,6 +62,7 @@
                     <div class="result-main">
                         <%  // fetching flight details from 'index.jsp'
                             int size = 0;
+                            boolean foundResults = false;
                             Connection con = new DatabaseConnection().getConnection();
                             PreparedStatement stmt = con.prepareStatement("SELECT * FROM flight "
                                                                             + "WHERE flight_source=? AND flight_destination=? AND flight_date=?");
@@ -69,39 +70,50 @@
                             stmt.setString(2, request.getParameter("to"));
                             stmt.setString(3, (String)(request.getParameter("date")));
                             ResultSet rst = stmt.executeQuery();
-                            rst.last();
-                            size = rst.getInt("flight_id");
-                            pageContext.setAttribute("size", size);
-                            rst.first();
+                            if(rst.next() == false) {
+                                foundResults = false;
+                            } else {
+                                rst.last();
+                                size = rst.getInt("flight_id");
+                                pageContext.setAttribute("size", size);
+                                rst.first();
+                                foundResults = true;
+                            }
                         %>
-                        <div class="display-4 text-center" style="font-size: 150%; margin-bottom: 2%;"><% out.print(size); %> results found for <% out.print(request.getParameter("from")); %> to 
-                            <% out.print(request.getParameter("to")); %>
+                        <div class="display-4 text-center" style="font-size: 150%; margin-bottom: 2%;"><strong><% out.print(size); %></strong> results found for <strong><% out.print(request.getParameter("from")); %></strong> to 
+                            <strong><% out.print(request.getParameter("to")); %></strong>
                         </div>
-                                <c:forEach begin="1" end="${size}">
-                                    <a href="http://localhost:8080/Flight-Management-and-Booking/login.jsp" style="text-decoration: none;" id="<%= rst.getString("flight_id") %>" onclick="getID(this.id);">
-                                        <div class="card card-body result">
-                                            <div class="result-line big-font">
-                                                <span class="float-left">
-                                                    <% out.print(rst.getString("flight_name")); %>
-                                                </span>
-                                                <span class="float-right">
-                                                    <% out.print("$ " + rst.getString("flight_price")); %>
-                                                </span>
-                                            </div>
-                                            <div class="mid-font">
-                                                <span class="float-left">
-                                                    <% out.print(rst.getString("flight_time")); %>
-                                                </span>
-                                                <div class="text-center"><% out.print(rst.getString("flight_duration")); %>
-                                                    <span class="float-right"> <% out.print(rst.getString("flight_available_seats")); %> seats</span>
-                                                </div>
+                        <%if(!foundResults) {%>
+                            <div class="mt-md-4" style="text-align: center; font-size: 18px; color: #ff1a1a;">
+                                <strong>Oops! No flights found.</strong>
+                            </div>
+                        <%} else {%>
+                            <c:forEach begin="1" end="${size}">
+                                <a href="login.jsp" style="text-decoration: none;" id="<%= rst.getString("flight_id") %>" onclick="getID(this.id);">
+                                    <div class="card card-body result">
+                                        <div class="result-line big-font">
+                                            <span class="float-left">
+                                                <% out.print(rst.getString("flight_name")); %>
+                                            </span>
+                                            <span class="float-right">
+                                                <% out.print("$ " + rst.getString("flight_price")); %>
+                                            </span>
+                                        </div>
+                                        <div class="mid-font">
+                                            <span class="float-left">
+                                                <% out.print(rst.getString("flight_time")); %>
+                                            </span>
+                                            <div class="text-center"><% out.print(rst.getString("flight_duration")); %>
+                                                <span class="float-right"> <% out.print(rst.getString("flight_available_seats")); %> seats</span>
                                             </div>
                                         </div>
-                                    </a>
-                                    <%  // making ResultSet point to next record
-                                        rst.next();
-                                    %>
-                                </c:forEach>
+                                    </div>
+                                </a>
+                                <%  // making ResultSet point to next record
+                                    rst.next();
+                                %>
+                            </c:forEach>
+                        <%}%>
                     </div>
                 </div>
                 <div class="col-md-3 mb-3"></div>

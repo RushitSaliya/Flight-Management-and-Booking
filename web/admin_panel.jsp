@@ -16,7 +16,7 @@
    <body>
         <%
             if(session.getAttribute("current_user") == null) {
-                response.sendRedirect("http://localhost:8080/Flight-Management-and-Booking/login.jsp");
+                response.sendRedirect("login.jsp");
             }
         %>
         <script type="text/javascript" src="JS/jquery.min.js"></script>
@@ -36,11 +36,6 @@
                         <a class="navbar-brand mr-0" href="index.jsp">
                             <img src="static/images/Swift-Air-Logo.png" style="width: 35%; height: 50%;">
                         </a>
-                        <%--<div class="nav-btn">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>--%>
                         <div class="col-md-6"></div>
                         <div class="col-md-2">
                             <form method="POST" action="Logout">
