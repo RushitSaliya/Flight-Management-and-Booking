@@ -1,0 +1,165 @@
+.form-top-margin{
+    margin-top: 2%;
+}
+
+/* For heading of sign up page and admin panel page*/ 
+.heading{
+    color: #668cff;
+    margin-bottom: 6%;
+}
+
+/* For every label in sign up page and admin panel page*/
+.label-input{
+    color: black;
+    margin-bottom: 3px !important;
+}
+
+/* For radio button used in sign up page */
+.radio-btn-input{
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* Padding for submit button */
+.submit-pad{
+    margin-top: 5px;
+}
+
+/* For every result in search result page */
+.result-body{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* For main result body */
+.result-main{
+    background: transparent;
+}
+
+/* For every result displayed in list */
+.result{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* For margin at bottom of first line of result body */
+.result-line{
+    margin-bottom: 20px;
+}
+
+/* To display flight name, price bloder */
+.big-font{
+    font-size: 150%;
+}
+
+/* To display departure time, journey hours and seats 
+   to display larger but not larger than flight-name */
+.mid-font{
+    font-size: 120%;
+}
+
+.label-info{
+    color: black;
+}
+
+.heading-info{
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #668cff!important;
+    font-size: 200%;
+}
+
+.char{
+    height: 20px;
+    margin-left: 1%;
+    width: 20px;
+    float: left;
+    padding-top: 2px;
+}
+
+/* In dashboard.jsp, for numbers on seat-map */
+.number-top{
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-bottom: 5px;
+}
+
+/* In index.jsp, for drop down menus */
+.drop-down{
+    width: 100%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.inverted-img {
+    filter: brightness(0) invert(1);
+}
+
+.border {
+    padding: 0px 10px;
+    border: 1px solid!important;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.navbar.bg-light {
+    width: 100%;
+    background-color: #668cff!important;
+}
+
+/* Manual color for navbar-brand, activated nav-link and nav-link's focused state */
+.navbar-light .navbar-brand, .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link:focus {
+    color: #fff;
+    font-size: 18px;
+}
+
+.navbar-light .navbar-brand {
+    
+}
+
+/* For changing nav-link's default color from #000 to #bfbfbf */
+.navbar-light .navbar-nav .nav-link {
+    color: #d9d9d9;
+}
+
+/* For changing default hovering effect color from #000 to #fff */
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #fff;
+}
+
+/* Hovering efect for navbar-brand */
+.navbar-light .navbar-brand:hover{
+    color: #fff;
+    font-weight: 500;
+}
+
+.index-page-image {
+    background: url("static/images/flight.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.plane-body {
+    height: 550px;
+    width: 375px;
+    border: 1px #000 solid;
+    border-radius: 7%;
+    float: left;
+}
+
+.seat {
+    height: 15px;
+    width: 15px;
+    border: 1px #000 solid;
+    border-radius: 20%;
+    float: left;
+}
+
+.seat:hover {
+    background-color: #668cff;
+}
