@@ -137,7 +137,53 @@
                         <div role="tabpanel" class="tab-pane fade" id="addNewFlightDetails">
                             <div class="col-md-6 mb-3" style="margin-top: 1%;">
                                 <form action="admin_data" method="post">
-                                    
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Enter Flight name</label>
+                                            <input class="form-control" type="text" name="flight-name" placeholder="Enter full flight name" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Enter airport name</label>
+                                            <input class="form-control" type="text" name="airport-name" placeholder="Enter airport name from where flight will depart" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Enter destination</label>
+                                            <input class="form-control" type="text" name="dest-airport-name" placeholder="Enter destination airport" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Departure Date</label>
+                                            <input class="form-control" type="date" name="dest-date" placeholder="Enter departure date" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Departure time</label>
+                                            <input class="form-control" type="text" name="dest-time" placeholder="Enter departure time" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Journey hours</label>
+                                            <input class="form-control" type="text" name="journey-hours" placeholder="Enter journey hours" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-xs-12 col-md-12 mb-3">
+                                            <label class="label-input">Ticket price</label>
+                                            <input class="form-control" type="text" name="ticket-price" placeholder="Enter ticket price in $" required/>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="col-md-4 mb-3 submit-pad">
+                                            <button class="btn btn-primary btn-outline-primary" name="button-value" value="add" type="submit">Add flight</button>
+                                        </div>
+                                    </div>
                                 </form>
                             </div>
                         </div>
